@@ -77,11 +77,12 @@ Link {
     width: 190px;
 }
 
-.runIcons {
+.runIcons, .hikeIcons {
     background-color: lightgray;
     margin: 25px 0 25px 0;
     border-radius: 10px;
     text-align: center;
+    min-height: 225px;
 }
 
 #run {
