@@ -12,9 +12,11 @@ function Main(props) {
 
     const [runs, setRuns] = useState(null)
     const [hikes, setHikes] = useState(null)
+    const [walks, setWalks] = useState(null)
 
     const RunURL = "http://localhost:3000/run/"
     const HikeURL = "http://localhost:3000/hike/"
+    const WalkURL = "http://localhost:3000/scenic/"
 
     const getRuns = async () => {
         const response = await fetch(RunURL)
@@ -26,6 +28,12 @@ function Main(props) {
         const response = await fetch(HikeURL)
         const data = await response.json()
         setHikes(data)
+    }
+
+    const getWalks = async () => {
+        const response = await fetch(WalkURL)
+        const data = await response.json()
+        setWalks(data)
     }
 
     const createRuns = async (run) => {
@@ -43,11 +51,21 @@ function Main(props) {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(hike)
         })
-        getRuns()
+        getHikes()
+    }
+
+    const createWalks = async (walk) => {
+        await fetch(WalkURL, {
+            method: "post",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(walk)
+        })
+        getWalks()
     }
 
     useEffect(() => getRuns(), [])
     useEffect(() => getHikes(), [])
+    useEffect(() => getWalks(), [])
 
     return (
         <main>
@@ -62,7 +80,7 @@ function Main(props) {
                     <Hike hikes={hikes} createHikes={createHikes} />
                 </Route>
                 <Route exact path="/scenic">
-                    <Scenic />
+                    <Scenic walks={walks} createWalks={createWalks} />
                 </Route>
                 <Route 
                     path="/run/:id"

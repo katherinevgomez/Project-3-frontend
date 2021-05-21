@@ -63,7 +63,7 @@ Link {
     font-size: 20px;
 }
 
-.runForm, .hikeForm {
+.runForm, .hikeForm, .scenicForm {
     text-align: center;
     border: solid black 2px;
     border-radius: 10px;
@@ -77,11 +77,15 @@ Link {
     background-image: url("https://i.pinimg.com/originals/3e/8e/bb/3e8ebbc3e95fc28bbf666c52347a2ad4.jpg");
 }
 
+.scenicForm {
+    background-image: url("https://image.shutterstock.com/image-illustration/abstract-pink-white-soft-cloud-260nw-1204478437.jpg");
+}
+
 #difficulty {
     width: 190px;
 }
 
-.runIcons, .hikeIcons {
+.runIcons, .hikeIcons, .scenicIcons {
     background-color: lightgray;
     margin: 25px 0 25px 0;
     border-radius: 10px;
