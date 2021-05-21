@@ -9,6 +9,28 @@ import HikeShow from '../pages/HikeShow'
 import ScenicShow from '../pages/ScenicShow'
 
 function Main(props) {
+
+    const [runs, setRuns] = useState(null)
+
+    const RunURL = "http://localhost:3000/run/"
+
+    const getRuns = async () => {
+        const response = await fetch(RunURL)
+        const data = await response.json()
+        setRuns(data)
+    }
+
+    const createRuns = async (run) => {
+        await fetch(RunURL, {
+            method: "post",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(run)
+        })
+        getRuns()
+    }
+
+    useEffect(() => getRuns(), [])
+
     return (
         <main>
             <Switch>
@@ -16,7 +38,7 @@ function Main(props) {
                     <Home />
                 </Route>
                 <Route path="/run">
-                    <Run />
+                    <Run runs={runs} createRuns={createRuns} />
                 </Route>
                 <Route path="/hike">
                     <Hike />

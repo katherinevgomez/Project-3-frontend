@@ -59,6 +59,21 @@ Link {
     font-size: 20px;
 }
 
+.runIcons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: teal;
+    color: black;
+    font-weight: 900;
+    font-size: 30px;
+    border-radius: 10px;
+    margin: 25px 10px 25px 10px;
+    height: 225px;
+    box-shadow: 10px 10px 8px gray;
+}
+
 #run {
     background-size: cover;
     background-image: url("https://healthcare.utah.edu/orthopaedics/_images/runners-billboard-march-2020.jpg");
