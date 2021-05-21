@@ -48,7 +48,7 @@ function Hike(props) {
 
     return (
         <section>
-            <form onSubmit={handleSubmit} className="container runForm">
+            <form onSubmit={handleSubmit} className="container hikeForm">
                 <div className="row"><h2>Post A New Hike</h2></div>
                 <div className="row">
                     <div className="six columns">
