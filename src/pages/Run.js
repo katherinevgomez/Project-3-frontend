@@ -48,7 +48,8 @@ function Run(props) {
 
     return (
         <section>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="container runForm">
+                <div className="row"><h2>Post A New Run</h2></div>
                 <div className="row">
                     <div className="six columns">
                         <label for="title">Run Name</label>
@@ -65,7 +66,7 @@ function Run(props) {
                         <input type="text" id="distance" value={newForm.distance} name="distance" placeholder="12 Miles" onChange={handleChange} />
                     </div>
                     <div className="six columns">
-                        <label for="difficulty">Difficulty</label>
+                        <label for="difficulty">Difficulty Level</label>
                         <select id="difficulty" value={newForm.difficulty} name="difficulty" onChange={handleChange}>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -87,16 +88,18 @@ function Run(props) {
                     </div>
                     <div className="six columns">
                         <label for="name">Your Name</label>
-                        <input type="text" id="name" value={newForm.name} name="name" onChange={handleChange} />
+                        <input type="text" id="name" value={newForm.name} name="name" placeholder="Joe Runner" onChange={handleChange} />
                     </div>
                 </div>
                 <div className="row">
-                    <div className="six columns">
+                    <div className="twelve columns">
                         <input className="button-primary" type="submit" value="Post Run" />
                     </div>
                 </div>
             </form>
-            {props.runs ? loaded() : loading()}
+            <div className="container runIndex">
+                {props.runs ? loaded() : loading()}
+            </div>
         </section>
     )
 }

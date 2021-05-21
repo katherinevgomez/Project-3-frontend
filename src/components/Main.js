@@ -37,13 +37,13 @@ function Main(props) {
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route path="/run">
+                <Route exact path="/run">
                     <Run runs={runs} createRuns={createRuns} />
                 </Route>
-                <Route path="/hike">
+                <Route exact path="/hike">
                     <Hike />
                 </Route>
-                <Route path="/scenic">
+                <Route exact path="/scenic">
                     <Scenic />
                 </Route>
                 <Route 
