@@ -1,4 +1,5 @@
-export function getCurrentLatLng() {
+//! this commented function retrieves current user location from browser. may be useful in calculating distance to destination from location
+/* export function getCurrentLatLng() {
     // Wrap getCurrentPosition to return a promise
     return new Promise((resolve) => {
         navigator.geolocation.getCurrentPosition((pos) =>
@@ -8,7 +9,7 @@ export function getCurrentLatLng() {
             })
         );
     });
-}
+} */
 
 export const getLatLngFromInput = async (address) => {
     let coor = { lat: null, lng: null };
