@@ -69,16 +69,23 @@ Link {
     border-radius: 10px;
     background-color: lightgray;
     background-size: cover;
+}
+
+.runForm{
     background-image: url("https://image.freepik.com/free-photo/watercolor-light-purple-white-gradient-background_145343-661.jpg");
-    box-shadow: 10px 10px 8px gray;
+    box-shadow: 10px 10px 8px rgb(101, 33, 120);
 }
 
 .hikeForm{
     background-image: url("https://i.pinimg.com/originals/3e/8e/bb/3e8ebbc3e95fc28bbf666c52347a2ad4.jpg");
+    box-shadow: 10px 10px 8px rgb(0, 108, 108);
+
 }
 
 .scenicForm {
     background-image: url("https://image.shutterstock.com/image-illustration/abstract-pink-white-soft-cloud-260nw-1204478437.jpg");
+    box-shadow: 10px 10px 8px rgb(148, 61, 105);
+
 }
 
 #difficulty {
