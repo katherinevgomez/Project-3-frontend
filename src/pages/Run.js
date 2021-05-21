@@ -86,6 +86,12 @@ function Run(props) {
                         <input type="text" id="location" value={newForm.location} name="location" placeholder="Runtown, FL" onChange={handleChange} />
                     </div>
                     <div className="six columns">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" value={newForm.name} name="name" onChange={handleChange} />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="six columns">
                         <input className="button-primary" type="submit" value="Post Run" />
                     </div>
                 </div>
