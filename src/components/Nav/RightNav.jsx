@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
+
 
 const Ul = styled.ul`
         list-style: none;
         display: flex;
         flex-flow: row nowrap;
+        z-index: 15;
 
         li {
             padding: 18px 10px;
@@ -21,19 +24,27 @@ const Ul = styled.ul`
             width: 200px;
             padding-top: 3.5rem;
             transition: transform 0.3s ease-in-out;
-            
-            li {
-                color: white;
-            }
         }
 `;
 
 function RightNav({open}) {
     return (
         <Ul open={open}>
-            <li>Run</li>
-            <li>Hike</li>
-            <li>Walk</li>
+            <li>
+                <Link to="/run" style={{textDecoration: 'none'}}>
+                <div className="navItem">Run</div>
+                </Link>
+            </li>
+            <li>
+                <Link to="/hike" style={{textDecoration: 'none'}}>
+                <div className="navItem">Hike</div>
+                </Link>
+            </li>
+            <li>
+                <Link to="/scenic" style={{textDecoration: 'none'}}>
+                <div className="navItem">Walk</div>
+                </Link>
+            </li>
         </Ul>
     )
 }
