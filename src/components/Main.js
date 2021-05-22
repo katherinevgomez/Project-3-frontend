@@ -85,10 +85,13 @@ function Main(props) {
                     path="/run/:id"
                     render={(rp) => <RunShow {...rp} runs={runs} />}
                 />
-                <Route path="/hike/:id" render={(rp) => <HikeShow {...rp} />} />
+                <Route
+                    path="/hike/:id"
+                    render={(rp) => <HikeShow {...rp} hikes={hikes} />}
+                />
                 <Route
                     path="/scenic/:id"
-                    render={(rp) => <ScenicShow {...rp} />}
+                    render={(rp) => <ScenicShow walks={walks} {...rp} />}
                 />
             </Switch>
         </main>
