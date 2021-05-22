@@ -13,7 +13,7 @@ function Header(props) {
                 <div className="navItem">Hike</div>
             </Link>
             <Link to="/scenic" style={{textDecoration: 'none'}}>
-                <div className="navItem">Scenic</div>
+                <div className="navItem">Walk</div>
             </Link>
         </nav>
     )

@@ -93,11 +93,12 @@ Link {
 }
 
 .runIcons, .hikeIcons, .scenicIcons {
-    background-color: lightgray;
+    background-color: white;
     margin: 25px 0 25px 0;
     border-radius: 10px;
     text-align: center;
     min-height: 225px;
+    box-shadow: 10px 10px 8px gray;
 }
 
 #run {

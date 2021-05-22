@@ -33,9 +33,9 @@ function Run(props) {
         return props.runs.map((run) => (
 
                     <div key={run._id} className="one-third column runIcons">
-                        <Link to={`/run/${run._id}`}>
-                            {/* <img src={run.image} alt={run.name} /> */}
-                            <h1>{run.title}</h1>
+                        <Link to={`/run/${run._id}`} style={{textDecoration: 'none', color: 'teal'}}>
+                            <img src={run.image} alt={run.name} style={{width:'100%', borderTopLeftRadius: '10px', borderTopRightRadius: '10px'}} />
+                            <h4 style={{fontFamily: ''}} >{run.title}</h4>
                         </Link>
                     </div>
 
