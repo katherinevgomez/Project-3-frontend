@@ -1,9 +1,10 @@
 import {Link} from 'react-router-dom'
+import Navbar from './Nav/Navbar'
 
 function Header(props) {
     return (
-        <nav className="nav">
-            <Link to="/" style={{textDecoration: 'none'}}>
+        <nav>
+            {/* <Link to="/" style={{textDecoration: 'none'}}>
                 <div className="navItem">Home</div>
             </Link>
             <Link to="/run" style={{textDecoration: 'none'}}>
@@ -14,9 +15,12 @@ function Header(props) {
             </Link>
             <Link to="/scenic" style={{textDecoration: 'none'}}>
                 <div className="navItem">Walk</div>
-            </Link>
+            </Link> */}
+            <Navbar />
         </nav>
     )
 }
 
 export default Header
+
+// className="nav"

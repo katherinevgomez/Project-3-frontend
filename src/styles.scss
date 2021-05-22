@@ -3,25 +3,27 @@ Link {
     text-decoration: none;
 }
 
-.nav {
-    display: flex;
-    justify-content: space-around;
-    background-color: black;
-    padding: 10px;
-    margin: 20px;
-    border-radius: 10px;
-}
+.nav
 
-.navItem {
-    font-size: 20px;
-    font-weight: 900;
-    color: white;
-    text-decoration: none;
-}
+// .nav {
+//     display: flex;
+//     justify-content: space-around;
+//     background-color: black;
+//     padding: 10px;
+//     margin: 20px;
+//     border-radius: 10px;
+// }
 
-.navItem:hover {
-    color: hotpink;
-}
+// .navItem {
+//     font-size: 20px;
+//     font-weight: 900;
+//     color: white;
+//     text-decoration: none;
+// }
+
+// .navItem:hover {
+//     color: hotpink;
+// }
 
 .iconsRow {
     display: flex;
