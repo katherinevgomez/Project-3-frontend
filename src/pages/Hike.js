@@ -52,21 +52,21 @@ function Hike(props) {
                 <div className="row"><h2>Post A New Hike</h2></div>
                 <div className="row">
                     <div className="six columns">
-                        <label for="title">Run Name</label>
+                        <label htmlFor="title">Run Name</label>
                         <input type="text" id="title" value={newForm.title} name="title" placeholder="Long Hike" onChange={handleChange} />
                     </div>
                     <div className="six columns">
-                        <label for="image">Image</label>
+                        <label htmlFor="image">Image</label>
                         <input type="text" id="image" value={newForm.image} name="image" placeholder="Image URL" onChange={handleChange} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="six columns">
-                        <label for="distance">Distance</label>
+                        <label htmlFor="distance">Distance</label>
                         <input type="text" id="distance" value={newForm.distance} name="distance" placeholder="20 Miles" onChange={handleChange} />
                     </div>
                     <div className="six columns">
-                        <label for="difficulty">Difficulty Level</label>
+                        <label htmlFor="difficulty">Difficulty Level</label>
                         <select id="difficulty" value={newForm.difficulty} name="difficulty" onChange={handleChange}>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -83,11 +83,11 @@ function Hike(props) {
                 </div>
                 <div className="row">
                     <div className="six columns">
-                        <label for="location">Location</label>
+                        <label htmlFor="location">Location</label>
                         <input type="text" id="location" value={newForm.location} name="location" placeholder="Runtown, FL" onChange={handleChange} />
                     </div>
                     <div className="six columns">
-                        <label for="name">Your Name</label>
+                        <label htmlFor="name">Your Name</label>
                         <input type="text" id="name" value={newForm.name} name="name" placeholder="Joe Runner" onChange={handleChange} />
                     </div>
                 </div>
