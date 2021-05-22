@@ -10,7 +10,9 @@ const Ul = styled.ul`
         z-index: 15;
 
         li {
-            padding: 18px 10px;
+            padding: 18px 50px;
+            font-size: 25px;
+            font-weight: 900;
         }
 
         @media (max-width: 768px) {
@@ -31,17 +33,17 @@ function RightNav({open}) {
     return (
         <Ul open={open}>
             <li>
-                <Link to="/run" style={{textDecoration: 'none'}}>
+                <Link to="/run" style={{textDecoration: 'none', color: 'teal'}}>
                 <div className="navItem">Run</div>
                 </Link>
             </li>
             <li>
-                <Link to="/hike" style={{textDecoration: 'none'}}>
+                <Link to="/hike" style={{textDecoration: 'none', color: 'teal'}}>
                 <div className="navItem">Hike</div>
                 </Link>
             </li>
             <li>
-                <Link to="/scenic" style={{textDecoration: 'none'}}>
+                <Link to="/scenic" style={{textDecoration: 'none', color: 'teal'}}>
                 <div className="navItem">Walk</div>
                 </Link>
             </li>

@@ -5,11 +5,12 @@ import Burger from './Burger'
 
 const Nav = styled.nav`
     width: 100%;
-    height: 55px;
+    height: 70px;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    border-bottom: solid 2px #f1f1f1;
 
     .logo {
         padding: 15px 0;

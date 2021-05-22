@@ -1,29 +1,15 @@
+@media (max-width: 768px) {
+    .navItem {
+        font-size: 20px;
+        font-weight: 900;
+        color: white;
+        text-decoration: none;
+    }
 
-Link {
-    text-decoration: none;
+    .navItem:hover {
+        color: hotpink;
+    }
 }
-
-.nav
-
-// .nav {
-//     display: flex;
-//     justify-content: space-around;
-//     background-color: black;
-//     padding: 10px;
-//     margin: 20px;
-//     border-radius: 10px;
-// }
-
-.navItem {
-    font-size: 20px;
-    font-weight: 900;
-    color: white;
-    text-decoration: none;
-}
-
-// .navItem:hover {
-//     color: hotpink;
-// }
 
 .iconsRow {
     display: flex;
