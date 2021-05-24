@@ -32,9 +32,9 @@ function Run(props) {
     const loaded = () => {
         return props.runs.map((run) => (
 
-                    <div key={run._id} className="one-third column runIcons">
+                    <div key={run._id} className="four columns runIcons">
                         <Link to={`/run/${run._id}`} style={{textDecoration: 'none', color: 'teal'}}>
-                            <img src={run.image} alt={run.name} style={{width:'100%', borderTopLeftRadius: '10px', borderTopRightRadius: '10px'}} />
+                            <img src={run.image} alt={run.name} style={{width:'100%', maxHeight: '220px', borderTopLeftRadius: '10px', borderTopRightRadius: '10px'}} />
                             <h4 style={{fontFamily: ''}} >{run.title}</h4>
                         </Link>
                     </div>

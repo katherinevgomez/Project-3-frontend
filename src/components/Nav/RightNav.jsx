@@ -33,17 +33,17 @@ function RightNav({open}) {
     return (
         <Ul open={open}>
             <li>
-                <Link to="/run" style={{textDecoration: 'none', color: 'teal'}}>
+                <Link to="/run" style={{textDecoration: 'none', color: 'black'}}>
                 <div className="navItem">Run</div>
                 </Link>
             </li>
             <li>
-                <Link to="/hike" style={{textDecoration: 'none', color: 'teal'}}>
+                <Link to="/hike" style={{textDecoration: 'none', color: 'black'}}>
                 <div className="navItem">Hike</div>
                 </Link>
             </li>
             <li>
-                <Link to="/scenic" style={{textDecoration: 'none', color: 'teal'}}>
+                <Link to="/scenic" style={{textDecoration: 'none', color: 'black'}}>
                 <div className="navItem">Walk</div>
                 </Link>
             </li>
