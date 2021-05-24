@@ -2,6 +2,12 @@ import { Redirect } from "react-router-dom";
 import MapLoader from "../components/Map/MapLoader";
 
 function Show(props) {
+    const processDelete = (event, id) => {
+        event.preventDefault();
+        props.deleteRun(id);
+        props.history.push("/run");
+    };
+
     const loaded = () => {
         const run = props.runs.filter(
             (r) => r._id === props.match.params.id
@@ -16,6 +22,11 @@ function Show(props) {
                     <h6>{run.title} location shown below on the map </h6>
                     <MapLoader location={run.location}></MapLoader>
                 </div>
+                <form onSubmit={(event) => processDelete(event, run._id)}>
+                    <button className="delete-button" type="submit">
+                        Delete Run
+                    </button>
+                </form>
             </>
         );
     };

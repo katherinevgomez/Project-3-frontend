@@ -8,14 +8,17 @@ import RunShow from "../pages/RunShow";
 import HikeShow from "../pages/HikeShow";
 import ScenicShow from "../pages/ScenicShow";
 
+const API_PORT = process.env.REACT_APP_DEV_API_PORT
+    ? process.env.REACT_APP_DEV_API_PORT
+    : "3000";
+
 function Main(props) {
     const [runs, setRuns] = useState(null);
     const [hikes, setHikes] = useState(null);
     const [walks, setWalks] = useState(null);
-
-    const RunURL = "http://localhost:3000/run/";
-    const HikeURL = "http://localhost:3000/hike/";
-    const WalkURL = "http://localhost:3000/scenic/";
+    const RunURL = `http://localhost:${API_PORT}/run/`;
+    const HikeURL = `http://localhost:${API_PORT}/hike/`;
+    const WalkURL = `http://localhost:${API_PORT}/scenic/`;
 
     const getRuns = async () => {
         const response = await fetch(RunURL);
@@ -62,6 +65,27 @@ function Main(props) {
         getWalks();
     };
 
+    const deleteRun = async (id) => {
+        await fetch(`${RunURL}${id}`, {
+            method: "delete",
+        });
+        getRuns();
+    };
+
+    const deleteWalk = async (id) => {
+        await fetch(`${WalkURL}${id}`, {
+            method: "delete",
+        });
+        getWalks();
+    };
+
+    const deleteHike = async (id) => {
+        await fetch(`${HikeURL}${id}`, {
+            method: "delete",
+        });
+        getHikes();
+    };
+
     useEffect(() => getRuns(), []);
     useEffect(() => getHikes(), []);
     useEffect(() => getWalks(), []);
@@ -83,15 +107,29 @@ function Main(props) {
                 </Route>
                 <Route
                     path="/run/:id"
-                    render={(rp) => <RunShow {...rp} runs={runs} />}
+                    render={(rp) => (
+                        <RunShow {...rp} runs={runs} deleteRun={deleteRun} />
+                    )}
                 />
                 <Route
                     path="/hike/:id"
-                    render={(rp) => <HikeShow {...rp} hikes={hikes} />}
+                    render={(rp) => (
+                        <HikeShow
+                            {...rp}
+                            hikes={hikes}
+                            deleteHike={deleteHike}
+                        />
+                    )}
                 />
                 <Route
                     path="/scenic/:id"
-                    render={(rp) => <ScenicShow walks={walks} {...rp} />}
+                    render={(rp) => (
+                        <ScenicShow
+                            walks={walks}
+                            {...rp}
+                            deleteWalk={deleteWalk}
+                        />
+                    )}
                 />
             </Switch>
         </main>
