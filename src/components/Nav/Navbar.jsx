@@ -26,7 +26,7 @@ const Navbar = () => {
         <Nav className="twelve columns">
             <div className="logo">
             <Link to="/" style={{textDecoration: 'none'}}>
-                <div className="navItem">Logo Image Here</div>
+                <div className="navItem" style={{color: 'black'}}>Logo Image Here</div>
             </Link>
             </div>
             <Burger />
