@@ -8,14 +8,17 @@ import RunShow from "../pages/RunShow";
 import HikeShow from "../pages/HikeShow";
 import ScenicShow from "../pages/ScenicShow";
 
+const API_PORT = process.env.REACT_APP_DEV_API_PORT
+    ? process.env.REACT_APP_DEV_API_PORT
+    : "3000";
+
 function Main(props) {
     const [runs, setRuns] = useState(null);
     const [hikes, setHikes] = useState(null);
     const [walks, setWalks] = useState(null);
-
-    const RunURL = "http://localhost:3000/run/";
-    const HikeURL = "http://localhost:3000/hike/";
-    const WalkURL = "http://localhost:3000/scenic/";
+    const RunURL = `http://localhost:${API_PORT}/run/`;
+    const HikeURL = `http://localhost:${API_PORT}/hike/`;
+    const WalkURL = `http://localhost:${API_PORT}/scenic/`;
 
     const getRuns = async () => {
         const response = await fetch(RunURL);
@@ -62,6 +65,54 @@ function Main(props) {
         getWalks();
     };
 
+    const deleteRun = async (id) => {
+        await fetch(`${RunURL}${id}`, {
+            method: "delete",
+        });
+        getRuns();
+    };
+
+    const deleteHike = async (id) => {
+        await fetch(`${HikeURL}${id}`, {
+            method: "delete",
+        });
+        getHikes();
+    };
+
+    const deleteWalk = async (id) => {
+        await fetch(`${WalkURL}${id}`, {
+            method: "delete",
+        });
+        getWalks();
+    };
+
+    const updateRun = async (updateRun, id) => {
+        await fetch(`${RunURL}${id}`, {
+            method: "put",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updateRun),
+        });
+        getRuns();
+    };
+
+    const updateHike = async (updateHike, id) => {
+        await fetch(`${HikeURL}${id}`, {
+            method: "put",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updateHike),
+        });
+        getRuns();
+    };
+
+    const updateWalk = async (updateWalk, id) => {
+        await fetch(`${WalkURL}${id}`, {
+            method: "put",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updateWalk),
+        });
+        getRuns();
+    };
+
     useEffect(() => getRuns(), []);
     useEffect(() => getHikes(), []);
     useEffect(() => getWalks(), []);
@@ -83,15 +134,36 @@ function Main(props) {
                 </Route>
                 <Route
                     path="/run/:id"
-                    render={(rp) => <RunShow {...rp} runs={runs} />}
+                    render={(rp) => (
+                        <RunShow
+                            {...rp}
+                            runs={runs}
+                            deleteRun={deleteRun}
+                            updateRun={updateRun}
+                        />
+                    )}
                 />
                 <Route
                     path="/hike/:id"
-                    render={(rp) => <HikeShow {...rp} hikes={hikes} />}
+                    render={(rp) => (
+                        <HikeShow
+                            {...rp}
+                            hikes={hikes}
+                            deleteHike={deleteHike}
+                            updateHike={updateHike}
+                        />
+                    )}
                 />
                 <Route
                     path="/scenic/:id"
-                    render={(rp) => <ScenicShow walks={walks} {...rp} />}
+                    render={(rp) => (
+                        <ScenicShow
+                            walks={walks}
+                            {...rp}
+                            deleteWalk={deleteWalk}
+                            updateWalk={updateWalk}
+                        />
+                    )}
                 />
             </Switch>
         </main>
