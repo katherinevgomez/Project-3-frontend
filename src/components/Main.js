@@ -72,6 +72,13 @@ function Main(props) {
         getRuns();
     };
 
+    const deleteHike = async (id) => {
+        await fetch(`${HikeURL}${id}`, {
+            method: "delete",
+        });
+        getHikes();
+    };
+
     const deleteWalk = async (id) => {
         await fetch(`${WalkURL}${id}`, {
             method: "delete",
@@ -79,11 +86,31 @@ function Main(props) {
         getWalks();
     };
 
-    const deleteHike = async (id) => {
-        await fetch(`${HikeURL}${id}`, {
-            method: "delete",
+    const updateRun = async (updateRun, id) => {
+        await fetch(`${RunURL}${id}`, {
+            method: "put",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updateRun),
         });
-        getHikes();
+        getRuns();
+    };
+
+    const updateHike = async (updateHike, id) => {
+        await fetch(`${HikeURL}${id}`, {
+            method: "put",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updateHike),
+        });
+        getRuns();
+    };
+
+    const updateWalk = async (updateWalk, id) => {
+        await fetch(`${WalkURL}${id}`, {
+            method: "put",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updateWalk),
+        });
+        getRuns();
     };
 
     useEffect(() => getRuns(), []);
@@ -108,7 +135,12 @@ function Main(props) {
                 <Route
                     path="/run/:id"
                     render={(rp) => (
-                        <RunShow {...rp} runs={runs} deleteRun={deleteRun} />
+                        <RunShow
+                            {...rp}
+                            runs={runs}
+                            deleteRun={deleteRun}
+                            updateRun={updateRun}
+                        />
                     )}
                 />
                 <Route
@@ -118,6 +150,7 @@ function Main(props) {
                             {...rp}
                             hikes={hikes}
                             deleteHike={deleteHike}
+                            updateHike={updateHike}
                         />
                     )}
                 />
@@ -128,6 +161,7 @@ function Main(props) {
                             walks={walks}
                             {...rp}
                             deleteWalk={deleteWalk}
+                            updateWalk={updateWalk}
                         />
                     )}
                 />
