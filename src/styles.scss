@@ -1,26 +1,14 @@
+@media (max-width: 768px) {
+    .navItem {
+        font-size: 20px;
+        font-weight: 900;
+        color: white;
+        text-decoration: none;
+    }
 
-Link {
-    text-decoration: none;
-}
-
-.nav {
-    display: flex;
-    justify-content: space-around;
-    background-color: black;
-    padding: 10px;
-    margin: 20px;
-    border-radius: 10px;
-}
-
-.navItem {
-    font-size: 20px;
-    font-weight: 900;
-    color: white;
-    text-decoration: none;
-}
-
-.navItem:hover {
-    color: hotpink;
+    .navItem:hover {
+        color: hotpink;
+    }
 }
 
 .iconsRow {
@@ -92,13 +80,20 @@ Link {
     width: 190px;
 }
 
+.runIndex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .runIcons, .hikeIcons, .scenicIcons {
     background-color: white;
     margin: 25px 0 25px 0;
     border-radius: 10px;
     text-align: center;
     min-height: 225px;
-    box-shadow: 10px 10px 8px gray;
+    max-width: 225px;
+    box-shadow:  5px  5px 5px gray;
 }
 
 #run {
