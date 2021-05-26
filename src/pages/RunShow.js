@@ -30,11 +30,18 @@ function Show(props) {
             <>
                 {/* hot display of details */}
                 <section className="container showPage">
-                    <div className="row twelve columns" style={{marginBottom: '10px'}}>
+                    <div
+                        className="row twelve columns"
+                        style={{ marginBottom: "10px" }}
+                    >
                         {run.image ? (
-                            <img id="showImage"
+                            <img
+                                id="showImage"
                                 src={run.image}
-                                style={{ maxWidth: "800px", maxHeight: "800px" }}
+                                style={{
+                                    maxWidth: "800px",
+                                    maxHeight: "800px",
+                                }}
                                 alt={
                                     typeof editForm?.title === "string"
                                         ? editForm.title
@@ -45,7 +52,10 @@ function Show(props) {
                             <h6>no image to display</h6>
                         )}
                     </div>
-                    <div className="row twelve columns" style={{marginBottom: '50px'}}>
+                    <div
+                        className="row twelve columns"
+                        style={{ marginBottom: "50px" }}
+                    >
                         <p>Posted by:</p>
                         {run.name ? (
                             <h5>
@@ -57,7 +67,10 @@ function Show(props) {
                             <h6>no name to display</h6>
                         )}
                     </div>
-                    <div className="row twelve columns" style={{height: '200px'}}>
+                    <div
+                        className="row twelve columns"
+                        style={{ height: "200px" }}
+                    >
                         <div className="six columns showTitle">
                             <p>Excursion Title:</p>
                             {run.title ? (
@@ -83,8 +96,11 @@ function Show(props) {
                             )}
                         </div>
                     </div>
-                    <div className="row twelve columns" style={{height: '200px'}}>
-                    <div className="six columns showDifficulty">
+                    <div
+                        className="row twelve columns"
+                        style={{ height: "200px" }}
+                    >
+                        <div className="six columns showDifficulty">
                             <p>User Difficulty:</p>
                             {run.difficulty ? (
                                 <h4>
@@ -104,28 +120,75 @@ function Show(props) {
                                         ? editForm.location
                                         : run.location}
                                 </h4>
-                            ) : (<h6>no location to display</h6>)}
+                            ) : (
+                                <h6>no location to display</h6>
+                            )}
                         </div>
                     </div>
-                    <div className="row twelve columns" style={{display: 'flex', justifyContent: "center"}}>
-                        <h4>
-                            <div>
-                                <MapLoader
-                                    location={run.location}
-                                ></MapLoader>
+                    {run.location && run.location !== "" ? (
+                        typeof editForm?.location === "string" ? (
+                            <div
+                                className="row twelve columns"
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <h4>
+                                    <div>
+                                        <MapLoader
+                                            location={editForm.location}
+                                        ></MapLoader>
+                                    </div>
+                                </h4>
                             </div>
-                        </h4>
-                    </div>
-                    
+                        ) : (
+                            <div
+                                className="row twelve columns"
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <h4>
+                                    <div>
+                                        <MapLoader
+                                            location={run.location}
+                                        ></MapLoader>
+                                    </div>
+                                </h4>
+                            </div>
+                        )
+                    ) : null}
                 </section>
-                <h3 style={{textAlign: 'center', marginTop: '25px', fontWeight:'600'}}>Update Post Information Here</h3>
+                <h3
+                    style={{
+                        textAlign: "center",
+                        marginTop: "25px",
+                        fontWeight: "600",
+                    }}
+                >
+                    Update Post Information Here
+                </h3>
                 {/* edit form */}
-                <section className="container showUpdate" style={{marginTop: '25px'}}>
-                    <form className="twelve columns" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}
+                <section
+                    className="container showUpdate"
+                    style={{ marginTop: "25px" }}
+                >
+                    <form
+                        className="twelve columns"
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "center",
+                        }}
                         onChange={(event) => handleChange(event)}
                         onSubmit={(event) => processUpdate(event, run, run._id)}
                     >
-                        <div className="row twelve columns" style={{marginTop:'15px'}}>
+                        <div
+                            className="row twelve columns"
+                            style={{ marginTop: "15px" }}
+                        >
                             <div className="six columns">
                                 <label htmlFor="title">Title</label>
                                 <input
@@ -187,8 +250,11 @@ function Show(props) {
                         </div>
                         <div className="row">
                             <div className="six columns">
-                                <label htmlFor="difficulty">Difficulty Level</label>
-                                <select style={{width: '190px'}}
+                                <label htmlFor="difficulty">
+                                    Difficulty Level
+                                </label>
+                                <select
+                                    style={{ width: "190px" }}
                                     type="text"
                                     name="difficulty"
                                     value={
@@ -231,13 +297,18 @@ function Show(props) {
                         </div>
                         <br />
                         <div className="row">
-                            <button style={{backgroundColor: 'white'}} type="submit">Save Updates</button>
+                            <button
+                                style={{ backgroundColor: "white" }}
+                                type="submit"
+                            >
+                                Save Updates
+                            </button>
                         </div>
                     </form>
                 </section>
 
                 {/* delete button */}
-                <section style={{textAlign: 'center'}}>
+                <section style={{ textAlign: "center" }}>
                     <form onSubmit={(event) => processDelete(event, run._id)}>
                         <button className="delete-button" type="submit">
                             Delete Run
@@ -257,4 +328,3 @@ function Show(props) {
 }
 
 export default Show;
-

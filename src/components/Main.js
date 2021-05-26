@@ -101,7 +101,7 @@ function Main(props) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updateHike),
         });
-        getRuns();
+        getHikes();
     };
 
     const updateWalk = async (updateWalk, id) => {
@@ -110,7 +110,7 @@ function Main(props) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updateWalk),
         });
-        getRuns();
+        getWalks();
     };
 
     useEffect(() => getRuns(), []);
