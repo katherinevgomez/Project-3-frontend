@@ -127,16 +127,41 @@ function Show(props) {
                             )}
                         </div>
                     </div>
-                    <div
-                        className="row twelve columns"
-                        style={{ display: "flex", justifyContent: "center" }}
-                    >
-                        <h4>
-                            <div>
-                                <MapLoader location={walk.location}></MapLoader>
+                    {walk.location && walk.location !== "" ? (
+                        typeof editForm?.location === "string" ? (
+                            <div
+                                className="row twelve columns"
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <h4>
+                                    <div>
+                                        <MapLoader
+                                            location={editForm.location}
+                                        ></MapLoader>
+                                    </div>
+                                </h4>
                             </div>
-                        </h4>
-                    </div>
+                        ) : (
+                            <div
+                                className="row twelve columns"
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <h4>
+                                    <div>
+                                        <MapLoader
+                                            location={walk.location}
+                                        ></MapLoader>
+                                    </div>
+                                </h4>
+                            </div>
+                        )
+                    ) : null}
                 </section>
                 <h3
                     style={{
