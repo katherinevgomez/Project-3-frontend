@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import Header from "../Header"
 
 import "./Login.css";
 
@@ -29,8 +30,10 @@ export default function Login({ setToken }) {
         setToken(token);
     };
     return (
-        <div className="login-wrapper">
-            <h1>Please Log In to RUN</h1>
+        <div className="twelve columns login-wrapper">
+            <Header />
+            <h1>Welcome to</h1>
+            <img id="showImage" src="https://i.imgur.com/MrZnEeq.png" alt="on the run" />
             <form onSubmit={handleSubmit}>
                 <label>
                     <p>Username</p>
