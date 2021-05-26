@@ -133,3 +133,26 @@
   padding: 0;
   border: 0;
 }
+.showPage {
+    text-align: center;
+    border-bottom: solid slategray 2px;
+    padding-bottom: 10px;
+}
+
+.showUpdate {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(144, 182, 198);
+    border-radius: 10px;
+}
+
+.updateSubmit {
+    background-color: white;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    margin-top: 20px;
+}
