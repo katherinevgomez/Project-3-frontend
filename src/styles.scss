@@ -162,3 +162,9 @@
     color: white;
     margin-top: 20px;
 }
+
+@media (max-width: 768px) {
+    #showImage {
+        width: 220px;
+    }
+}
