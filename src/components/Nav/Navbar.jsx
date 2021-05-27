@@ -5,7 +5,7 @@ import Burger from './Burger'
 
 const Nav = styled.nav`
     width: 100%;
-    height: 70px;
+    height: 90px;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
@@ -13,7 +13,7 @@ const Nav = styled.nav`
     border-bottom: solid 2px #f1f1f1;
 
     .logo {
-        padding: 15px 0;
+        padding: 10px 0;
 
     }
 
@@ -26,7 +26,8 @@ const Navbar = () => {
         <Nav className="twelve columns">
             <div className="logo">
             <Link to="/" style={{textDecoration: 'none'}}>
-                <div className="navItem" style={{color: 'black'}}>Logo Image Here</div>
+                <img className="navItem" style={{maxWidth: '150px'}} src="https://i.imgur.com/sgn5zt0.png" alt="Home Button" />
+                {/* <div className="navItem" style={{color: 'black'}}>Logo Image Here</div> */}
             </Link>
             </div>
             <Burger />
