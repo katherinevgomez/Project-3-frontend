@@ -32,12 +32,11 @@ function App() {
         window.location?.href.split("/").pop() === "signup"
     );
     const history = useHistory();
-    const toggleWantsSingup = (event) => {
+    const toggleWantsSignup = (event) => {
         event.preventDefault();
         setWantsSignup(!wantsSignup);
     };
     if (!token) {
-        console.log(wantsSignup);
         if (wantsSignup) {
             setTimeout(() => {
                 // hack that squashes warning if immediately history.push before return...
@@ -47,7 +46,7 @@ function App() {
                 <Route exact path="/signup">
                     <Signup
                         wantsSignup={wantsSignup}
-                        toggleWantsSingup={toggleWantsSingup}
+                        toggleWantsSignup={toggleWantsSignup}
                     />
                 </Route>
             );
@@ -56,7 +55,7 @@ function App() {
                 <Login
                     setToken={setToken}
                     wantsSignup={wantsSignup}
-                    toggleWantsSingup={toggleWantsSingup}
+                    toggleWantsSignup={toggleWantsSignup}
                 />
             );
         }

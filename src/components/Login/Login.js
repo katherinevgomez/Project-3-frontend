@@ -18,7 +18,7 @@ async function loginUser(credentials) {
     }).then((data) => data.json());
 }
 
-export default function Login({ setToken, toggleWantsSingup }) {
+export default function Login({ setToken, toggleWantsSignup }) {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
     const handleSubmit = async (e) => {
@@ -75,7 +75,7 @@ export default function Login({ setToken, toggleWantsSingup }) {
                     </button>
                 </div>
             </form>
-            <Link to="/signup" onClick={(e) => toggleWantsSingup(e)}>
+            <Link to="/signup" onClick={(e) => toggleWantsSignup(e)}>
                 or signup
             </Link>
         </div>
