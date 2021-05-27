@@ -1,10 +1,12 @@
 // added lines (2-19)
-// import React, { useState } from 'react';
-import React from "react";
+import React, { useState } from "react";
+// import React from "react";
 import "./App.css";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Login from "./components/Login/Login";
+import Signup from "./pages/Signup";
+
 import Preferences from "./components/Preferences/Preferences";
 import useToken from "./components/App/useToken";
 
@@ -26,8 +28,44 @@ function App() {
     // const token = getToken();
     // const [token, setToken] = useState();
     const { token, setToken } = useToken();
+    const [wantsSignup, setWantsSignup] = useState(
+        window.location?.href.split("/").pop() === "signup"
+    );
+    const history = useHistory();
+    const toggleWantsSingup = (event) => {
+        event.preventDefault();
+        setWantsSignup(!wantsSignup);
+    };
     if (!token) {
-        return <Login setToken={setToken} />;
+        console.log(wantsSignup);
+        if (wantsSignup) {
+            setTimeout(() => {
+                // hack that squashes warning if immediately history.push before return...
+                history.push("/signup");
+            }, 1);
+            return (
+                <Route exact path="/signup">
+                    <Signup
+                        wantsSignup={wantsSignup}
+                        toggleWantsSingup={toggleWantsSingup}
+                    />
+                </Route>
+            );
+        } else {
+            return (
+                <Login
+                    setToken={setToken}
+                    wantsSignup={wantsSignup}
+                    toggleWantsSingup={toggleWantsSingup}
+                />
+            );
+        }
+    }
+    if (window.location?.href.split("/").pop() === "signup") {
+        setTimeout(() => {
+            // hack that squashes warning if immediately history.push before return...
+            history.push("/");
+        }, 1);
     }
     return (
         <div className="container">
