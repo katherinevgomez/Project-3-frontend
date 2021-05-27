@@ -1,15 +1,12 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-
-import "./Login.css";
+import { useState } from "react";
+import "../components/Login/Login.css";
 
 const API_PORT = process.env.REACT_APP_DEV_API_PORT
     ? process.env.REACT_APP_DEV_API_PORT
-    : "8080"; //! this fixes the problem if you have the variable defined in env, but if you don't the problem that existed going into this pull request will be untouched as some api requests are going to port 3000 and others to 8080. It makes a bunch of sense to choose either 3000 or 8080 for the hardcoded value, but I didn't want to make changes that surprise anyone. Just couldn't work on this feature with this issue on my end, so thats why I asked about inserting this ternary.
+    : "3000";
 
-async function loginUser(credentials) {
-    return fetch(`http://localhost:${API_PORT}/auth/login`, {
+async function signupUser(credentials) {
+    return fetch(`http://localhost:${API_PORT}/auth/signup`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -18,16 +15,21 @@ async function loginUser(credentials) {
     }).then((data) => data.json());
 }
 
-export default function Login({ setToken, toggleWantsSignup }) {
+export default function Signup(props) {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
+    const [failedCreation, setFailedCreation] = useState();
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const token = await loginUser({
+        const res = await signupUser({
             username,
             password,
         });
-        setToken(token);
+        if (!res.error) {
+            props.toggleWantsSignup(e);
+        } else {
+            setFailedCreation(true);
+        }
     };
     return (
         <div
@@ -50,12 +52,18 @@ export default function Login({ setToken, toggleWantsSignup }) {
             />
             <form className="container loginForm" onSubmit={handleSubmit}>
                 <div className="row">
-                    <h3 style={{ color: "teal" }}>Login</h3>
+                    <h3 style={{ color: "teal" }}>Signup</h3>
+                    {failedCreation ? (
+                        <h6 style={{ color: "red" }}>
+                            Signup Error. Please try again.
+                        </h6>
+                    ) : null}
                 </div>
                 <div className="row">
                     <p>Username</p>
                     <input
                         type="text"
+                        required
                         onChange={(e) => setUserName(e.target.value)}
                     />
                 </div>
@@ -63,6 +71,7 @@ export default function Login({ setToken, toggleWantsSignup }) {
                     <p>Password</p>
                     <input
                         type="password"
+                        required
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
@@ -75,13 +84,6 @@ export default function Login({ setToken, toggleWantsSignup }) {
                     </button>
                 </div>
             </form>
-            <Link to="/signup" onClick={(e) => toggleWantsSignup(e)}>
-                or signup
-            </Link>
         </div>
     );
 }
-
-Login.propTypes = {
-    setToken: PropTypes.func.isRequired,
-};
