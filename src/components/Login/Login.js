@@ -29,25 +29,29 @@ export default function Login({ setToken }) {
         setToken(token);
     };
     return (
-        <div className="login-wrapper">
-            <h1>Please Log In to RUN</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <p>Username</p>
-                    <input
-                        type="text"
-                        onChange={(e) => setUserName(e.target.value)}
-                    />
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input
-                        type="password"
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </label>
-                <div>
-                    <button type="submit">Submit</button>
+        <div className="container login-wrapper"  style={{textAlign: 'center'}}>
+                <h1 className="row twelve columns" id="loginHead" style={{backgroundColor:'white', padding:'50px'}}>Welcome to</h1>
+                <img className="row" id="showImage" src="https://i.imgur.com/MrZnEeq.png" alt="on the run" style={{margin: '50px'}}/>
+            <form className="container loginForm"  onSubmit={handleSubmit}>
+                <div className="row">
+                    <h3 style={{color: 'teal'}}>Login</h3>
+                </div>
+                <div className="row">
+                        <p>Username</p>
+                        <input
+                            type="text"
+                            onChange={(e) => setUserName(e.target.value)}
+                        />
+                </div>
+                <div className="row">
+                        <p>Password</p>
+                        <input
+                            type="password"
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                <div className="row">
+                    <button type="submit" style={{backgroundColor: 'teal', color: 'white'}} >Submit</button>
                 </div>
             </form>
         </div>
