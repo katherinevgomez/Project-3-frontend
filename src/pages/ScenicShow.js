@@ -6,7 +6,7 @@ function Show(props) {
     const processDelete = (event, id) => {
         event.preventDefault();
         props.deleteWalk(id);
-        props.history.push("/walk");
+        props.history.push("/scenic");
     };
 
     const processUpdate = (event, originalWalk, id) => {
