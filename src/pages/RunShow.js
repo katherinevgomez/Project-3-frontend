@@ -168,7 +168,7 @@ function Show(props) {
                         fontWeight: "600",
                     }}
                 >
-                    Update Post Information Here
+                    Update Post Information
                 </h3>
                 {/* edit form */}
                 <section

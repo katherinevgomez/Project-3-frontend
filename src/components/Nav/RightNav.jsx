@@ -48,13 +48,8 @@ function RightNav({open}) {
                 </Link>
             </li>
             <li>
-                <Link to="/login" style={{textDecoration: 'none', color: 'black'}}>
-                    <div className="navItem">Login</div>
-                </Link>
-            </li>
-            <li>
-                <Link to="/signup" style={{textDecoration: 'none', color: 'black'}}>
-                    <div className="navItem">Sign Up</div>
+                <Link to="/" style={{textDecoration: 'none', color: 'red'}}>
+                    <div className="navItem">Logout</div>
                 </Link>
             </li>
         </Ul>
