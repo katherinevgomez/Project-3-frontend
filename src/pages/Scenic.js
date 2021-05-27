@@ -112,8 +112,6 @@ function Scenic(props) {
                             <option value="10">10</option>
                         </select>
                     </div> */}
-                </div>
-                <div className="row">
                     <div className="six columns">
                         <label htmlFor="location">Location</label>
                         <input
@@ -125,7 +123,9 @@ function Scenic(props) {
                             onChange={handleChange}
                         />
                     </div>
-                    <div className="six columns">
+                </div>
+                <div className="row">
+                    <div className="twelve columns">
                         <label htmlFor="name">Your Name</label>
                         <input
                             type="text"

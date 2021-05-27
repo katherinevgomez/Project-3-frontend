@@ -114,7 +114,7 @@ function Show(props) {
                                 <h6>no difficulty to display</h6>
                             )}
                         </div> */}
-                        <div className="six columns showLocation">
+                        <div className="twelve columns showLocation">
                             <p>Location:</p>
                             {walk.location && walk.location !== "" ? (
                                 <h4>
@@ -170,7 +170,7 @@ function Show(props) {
                         fontWeight: "600",
                     }}
                 >
-                    Update Post Information Here
+                    Update Post Information
                 </h3>
                 {/* edit form */}
                 <section
@@ -284,7 +284,7 @@ function Show(props) {
                                     <option value="10">10</option>
                                 </select>
                             </div>} */}
-                            <div className="six columns">
+                            <div className="twelve columns">
                                 <label htmlFor="name">Name</label>
                                 <input
                                     type="text"

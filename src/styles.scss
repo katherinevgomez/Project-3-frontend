@@ -107,8 +107,10 @@
 }
 
 #scenic {
-    background-image: stretch;
-    background-image: url("https://i.imgur.com/2YYw7x2.jpg");
+    background-image: cover;
+    background-position: center;
+    background-size: fill;
+    background-image: url("https://i.imgur.com/l5Pm1Nt.jpg");
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
