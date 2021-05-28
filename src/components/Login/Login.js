@@ -34,13 +34,15 @@ export default function Login({ setToken, toggleWantsSignup }) {
             className="container login-wrapper"
             style={{ textAlign: "center" }}
         >
-            <h1
+            <h5
                 className="row twelve columns"
                 id="loginHead"
                 style={{ backgroundColor: "white", padding: "50px" }}
             >
-                Welcome to
-            </h1>
+                “I often hear someone say I’m not a real runner. We are all runners, some just run faster than others. I never met a fake runner.” 
+                <br/>
+                – Bart Yasso
+            </h5>
             <img
                 className="row"
                 id="showImage"
@@ -48,10 +50,10 @@ export default function Login({ setToken, toggleWantsSignup }) {
                 alt="on the run"
                 style={{ margin: "50px" }}
             />
-            <form className="container loginForm" onSubmit={handleSubmit}>
-                <div className="row">
-                    <h3 style={{ color: "teal" }}>Login</h3>
-                </div>
+            <form className="container loginForm" style={{border:'solid rgb(68,240,226) 2px'}} onSubmit={handleSubmit}>
+                {/* <div className="row">
+                    <h3 style={{ color: "black" }}>Login</h3>
+                </div> */}
                 <div className="row">
                     <p>Username</p>
                     <input
@@ -69,15 +71,17 @@ export default function Login({ setToken, toggleWantsSignup }) {
                 <div className="row">
                     <button
                         type="submit"
-                        style={{ backgroundColor: "teal", color: "white" }}
+                        style={{ backgroundColor: "rgb(68,240,226)", color: "black" }}
                     >
-                        Submit
+                        Login
                     </button>
                 </div>
+                <div className="row">
+                    <Link to="/signup" onClick={(e) => toggleWantsSignup(e)}>
+                        <button style={{color:'black', marginTop:'40px'}}>Or Sign Up</button>
+                    </Link>
+                </div>
             </form>
-            <Link to="/signup" onClick={(e) => toggleWantsSignup(e)}>
-                or signup
-            </Link>
         </div>
     );
 }
