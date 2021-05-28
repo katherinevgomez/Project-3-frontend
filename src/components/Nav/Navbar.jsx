@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 // added for logout
-// import { GlobalCtx } from "../App";
+import { GlobalCtx } from "../App";
 import Burger from './Burger'
 
 const Nav = styled.nav`
@@ -24,14 +24,14 @@ const Nav = styled.nav`
 
 // lines 27-40 added for logout 
 const Navbar = (props) => {
-    // const { gState, setGState } = React.useContext(GlobalCtx);
+    const { gState, setGState } = React.useContext(GlobalCtx);
 
     const logout = (
         <Link>
           <h2
             onClick={() => {
               window.localStorage.removeItem("token");
-              // setGState({ ...gState, token: null });
+              setGState({ ...gState, token: null });
             }}
           >
             Logout
