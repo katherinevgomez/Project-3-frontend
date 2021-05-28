@@ -69,18 +69,18 @@
 
 .runForm{
     background-image: url("https://c4.wallpaperflare.com/wallpaper/826/934/351/pink-white-blue-purple-paint-splash-hd-wallpaper-preview.jpg");
-    box-shadow: 10px 10px 8px rgb(101, 33, 120);
+    box-shadow: 10px 10px 8px rgb(12, 92, 106);
 }
 
 .hikeForm{
     background-image: url("https://p4.wallpaperbetter.com/wallpaper/94/966/328/pink-white-blue-purple-paint-splash-hd-wallpaper-preview.jpg");
-    box-shadow: 10px 10px 8px rgb(0, 108, 108);
+    box-shadow: 10px 10px 8px rgb(12, 92, 106);
 
 }
 
 .scenicForm {
     background-image: url("https://images.wallpaperscraft.com/image/paint_blue_pink_145378_3840x2160.jpg");
-    box-shadow: 10px 10px 8px rgb(148, 61, 105);
+    box-shadow: 10px 10px 8px rgb(12, 92, 106);
 
 }
 
@@ -95,9 +95,12 @@
 }
 
 .runIcons, .hikeIcons, .scenicIcons {
-    background-color: teal;
-    background-size: fill;
-    background-image: url('https://www.publicdomainpictures.net/pictures/210000/nahled/turquoise-fading-background.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: lightgray;
+    background-size: cover;
+    background-image: url('https://i.ytimg.com/vi/R9mXtzn8meE/maxresdefault.jpg');
     margin: 25px 0 25px 0;
     border: solid 2px black;
     border-radius: 10px;
@@ -121,7 +124,9 @@
 
     h4 {
         padding: 0 5px 0 5px;
-        color: white;
+        color: black;
+        font-weight: 600;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
 }
