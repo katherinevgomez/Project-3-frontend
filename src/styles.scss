@@ -129,6 +129,10 @@
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
+    h4:hover {
+        color: hotpink;
+    }
+
 }
 
 #run {
@@ -198,4 +202,10 @@
     background-color: red;
     color: white;
     margin-top: 20px;
+}
+
+.updateBtn:hover {
+    border: solid 3px greenyellow;
+    color: black;
+    background-color: black;
 }
