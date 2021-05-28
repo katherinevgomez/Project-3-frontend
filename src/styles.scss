@@ -5,6 +5,10 @@
         color: white;
         text-decoration: none;
     }
+
+    #showImage {
+        width: 220px;
+    }
 }
 
 .iconsRow {
@@ -91,13 +95,35 @@
 }
 
 .runIcons, .hikeIcons, .scenicIcons {
-    background-color: white;
+    background-color: teal;
+    background-size: fill;
+    background-image: url('https://www.publicdomainpictures.net/pictures/210000/nahled/turquoise-fading-background.jpg');
     margin: 25px 0 25px 0;
+    border: solid 2px black;
     border-radius: 10px;
     text-align: center;
     min-height: 225px;
     max-width: 225px;
     box-shadow:  5px  5px 5px gray;
+
+    img {
+        width: 100%;
+        max-height: 200px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .indexIcon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h4 {
+        padding: 0 5px 0 5px;
+        color: white;
+    }
+
 }
 
 #run {
@@ -167,10 +193,4 @@
     background-color: red;
     color: white;
     margin-top: 20px;
-}
-
-@media (max-width: 768px) {
-    #showImage {
-        width: 220px;
-    }
 }
