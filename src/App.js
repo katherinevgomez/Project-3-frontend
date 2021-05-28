@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Login from "./components/Login/Login";
 import Signup from "./pages/Signup";
-
 import Preferences from "./components/Preferences/Preferences";
 import useToken from "./components/App/useToken";
 
@@ -28,6 +27,7 @@ function App() {
     // const token = getToken();
     // const [token, setToken] = useState();
     const { token, setToken } = useToken();
+    const [userName, setUserName] = useState("");
     const [wantsSignup, setWantsSignup] = useState(
         window.location?.href.split("/").pop() === "signup"
     );
@@ -56,6 +56,7 @@ function App() {
                     setToken={setToken}
                     wantsSignup={wantsSignup}
                     toggleWantsSignup={toggleWantsSignup}
+                    setUserName={setUserName}
                 />
             );
         }
@@ -88,7 +89,7 @@ function App() {
             {/* Added the above, Lines 38-49 */}
             <div className="row">
                 <div className="twelve columns">
-                    <Main />
+                    <Main userName={userName} token={token} />
                 </div>
             </div>
         </div>

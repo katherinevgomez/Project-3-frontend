@@ -41,8 +41,14 @@ function Main(props) {
     const createRuns = async (run) => {
         await fetch(RunURL, {
             method: "post",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(run),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ` + props.token,
+            },
+            body: JSON.stringify({
+                ...run,
+                type: "runs",
+            }),
         });
         getRuns();
     };
@@ -50,8 +56,14 @@ function Main(props) {
     const createHikes = async (hike) => {
         await fetch(HikeURL, {
             method: "post",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(hike),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ` + props.token,
+            },
+            body: JSON.stringify({
+                ...hike,
+                type: "hikes",
+            }),
         });
         getHikes();
     };
@@ -59,8 +71,14 @@ function Main(props) {
     const createWalks = async (walk) => {
         await fetch(WalkURL, {
             method: "post",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(walk),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ` + props.token,
+            },
+            body: JSON.stringify({
+                ...walk,
+                type: "scenics",
+            }),
         });
         getWalks();
     };
