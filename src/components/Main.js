@@ -86,6 +86,9 @@ function Main(props) {
     const deleteRun = async (id) => {
         await fetch(`${RunURL}${id}`, {
             method: "delete",
+            headers: {
+                Authorization: `bearer ` + props.token,
+            },
         });
         getRuns();
     };
@@ -93,6 +96,9 @@ function Main(props) {
     const deleteHike = async (id) => {
         await fetch(`${HikeURL}${id}`, {
             method: "delete",
+            headers: {
+                Authorization: `bearer ` + props.token,
+            },
         });
         getHikes();
     };
@@ -100,6 +106,9 @@ function Main(props) {
     const deleteWalk = async (id) => {
         await fetch(`${WalkURL}${id}`, {
             method: "delete",
+            headers: {
+                Authorization: `bearer ` + props.token,
+            },
         });
         getWalks();
     };
@@ -107,7 +116,10 @@ function Main(props) {
     const updateRun = async (updateRun, id) => {
         await fetch(`${RunURL}${id}`, {
             method: "put",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ` + props.token,
+            },
             body: JSON.stringify(updateRun),
         });
         getRuns();
@@ -116,7 +128,10 @@ function Main(props) {
     const updateHike = async (updateHike, id) => {
         await fetch(`${HikeURL}${id}`, {
             method: "put",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ` + props.token,
+            },
             body: JSON.stringify(updateHike),
         });
         getHikes();
@@ -125,7 +140,10 @@ function Main(props) {
     const updateWalk = async (updateWalk, id) => {
         await fetch(`${WalkURL}${id}`, {
             method: "put",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ` + props.token,
+            },
             body: JSON.stringify(updateWalk),
         });
         getWalks();
