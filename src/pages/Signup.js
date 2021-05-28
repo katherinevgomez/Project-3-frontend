@@ -36,13 +36,15 @@ export default function Signup(props) {
             className="container login-wrapper"
             style={{ textAlign: "center" }}
         >
-            <h1
+            <h5
                 className="row twelve columns"
                 id="loginHead"
                 style={{ backgroundColor: "white", padding: "50px" }}
             >
-                Welcome to
-            </h1>
+                “Get going … walk if you have to, but finish the damned race.”
+                <br/> 
+                – Ron Hill
+            </h5>
             <img
                 className="row"
                 id="showImage"
@@ -52,7 +54,7 @@ export default function Signup(props) {
             />
             <form className="container loginForm" onSubmit={handleSubmit}>
                 <div className="row">
-                    <h3 style={{ color: "teal" }}>Signup</h3>
+                    <h5 style={{ color: "#36bde9" }}>Create Your Account</h5>
                     {failedCreation ? (
                         <h6 style={{ color: "red" }}>
                             Signup Error. Please try again.
@@ -78,9 +80,9 @@ export default function Signup(props) {
                 <div className="row">
                     <button
                         type="submit"
-                        style={{ backgroundColor: "teal", color: "white" }}
+                        style={{ backgroundColor: "rgb(68,240,226)", color: "black" }}
                     >
-                        Submit
+                        Sign Up
                     </button>
                 </div>
             </form>
