@@ -166,6 +166,6 @@ function Hike(props) {
             </div>
         </section>
     );
-}
+
 
 export default Hike;

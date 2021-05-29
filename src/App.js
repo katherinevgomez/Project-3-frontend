@@ -38,19 +38,6 @@ function App() {
         const currentMode = JSON.parse(json);
     }, [darkMode]);
 
-    const [darkMode, setDarkmode] = React.useState(false)
-
-    React.useEffect(() => {
-      if(darkMode) {
-        document.body.classList.add("dark");
-      } else {
-        document.body.classList.remove("dark");
-      }
-      const json = JSON.stringify(darkMode);
-      localStorage.setItem("site-dark-mode", json);
-      const currentMode = JSON.parse(json);
-    }, [darkMode]);
-
 
     // added lines 26-31
     // const token = getToken();
@@ -106,8 +93,6 @@ function App() {
                     <button onClick={() => setDarkmode(!darkMode)}>
                         Toggle Dark Mode
                     </button>
-
-                    <button onClick={() => setDarkmode(!darkMode)}>Toggle Dark Mode</button>
 
                 </div>
             </div>
