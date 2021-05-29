@@ -33,8 +33,8 @@ function Hike(props) {
         return props.hikes.map((hike) => (
 
                     <div key={hike._id} className="one-third column hikeIcons">
-                        <Link to={`/hike/${hike._id}`} style={{textDecoration: 'none', color: 'teal'}}>
-                            <img src={hike.image} alt={hike.name} style={{width:'100%', maxHeight: '220px', borderTopLeftRadius: '10px', borderTopRightRadius: '10px'}} />
+                        <img src={hike.image} alt={hike.name} />
+                        <Link to={`/hike/${hike._id}`} style={{textDecoration: 'none'}}>
                             <h4>{hike.title}</h4>
                         </Link>
                     </div>

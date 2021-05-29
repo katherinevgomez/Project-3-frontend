@@ -9,7 +9,7 @@ function Home(props) {
                 <Link to="/scenic" className="one-third column routeIcon" id="scenic"><p>Walk</p></Link>
                 <p className="twelve columns instruction">Choose An Excursion</p>
                 <div className="twelve columns descContainer">
-                        <p className="description">Welcome to On The Run! A collaborative effort bewteen people in motion, to share their favorite routes around the world.</p>
+                        <p className="description">Welcome to On The Run! A collaborative effort between people in motion, to share their favorite routes around the world.</p>
                     </div>
                 </div>
             </div>
