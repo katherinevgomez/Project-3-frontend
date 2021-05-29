@@ -314,6 +314,7 @@ function Show(props) {
                                 <br />
                                 <div className="row">
                                     <button
+                                        className="updateBtn"
                                         style={{ backgroundColor: "white" }}
                                         type="submit"
                                     >

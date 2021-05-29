@@ -31,6 +31,12 @@ function Scenic(props) {
     const loaded = () => {
         return props.walks.all_walks.map((walk) => (
             <div key={walk._id} className="one-third column scenicIcons">
+
+                <img src={walk.image} alt={walk.name} />
+                <Link
+                    to={`/scenic/${walk._id}`}
+                    style={{ textDecoration: "none" }}
+
                 <img
                     src={walk.image}
                     alt={walk.name}
@@ -38,6 +44,7 @@ function Scenic(props) {
                 <Link
                     to={`/scenic/${walk._id}`}
                     style={{ textDecoration: "none"}}
+
                 >
                     <h4>{walk.title}</h4>
                 </Link>

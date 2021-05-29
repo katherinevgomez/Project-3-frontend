@@ -11,7 +11,6 @@ function Show(props) {
 
     const processUpdate = (event, originalWalk, id) => {
         event.preventDefault();
-        console.log(editForm);
         props.updateWalk({ ...originalWalk, ...editForm }, id);
     };
 
@@ -25,7 +24,6 @@ function Show(props) {
         const walk = props.walks.all_walks.filter(
             (r) => r._id === props.match.params.id
         )[0];
-        console.log(walk);
         return typeof walk === "undefined" ? (
             <Redirect to="/" />
         ) : (
@@ -314,6 +312,7 @@ function Show(props) {
                                 <br />
                                 <div className="row">
                                     <button
+                                        className="updateBtn"
                                         style={{ backgroundColor: "white" }}
                                         type="submit"
                                     >
