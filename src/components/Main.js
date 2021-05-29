@@ -21,19 +21,35 @@ function Main(props) {
     const WalkURL = `http://localhost:${API_PORT}/scenic/`;
 
     const getRuns = async () => {
-        const response = await fetch(RunURL);
+        const response = await fetch(RunURL, {
+            method: "get",
+            headers: {
+                Authorization: `bearer ` + props.token,
+            },
+        });
         const data = await response.json();
+        console.log(data);
         setRuns(data);
     };
 
     const getHikes = async () => {
-        const response = await fetch(HikeURL);
+        const response = await fetch(HikeURL, {
+            method: "get",
+            headers: {
+                Authorization: `bearer ` + props.token,
+            },
+        });
         const data = await response.json();
         setHikes(data);
     };
 
     const getWalks = async () => {
-        const response = await fetch(WalkURL);
+        const response = await fetch(WalkURL, {
+            method: "get",
+            headers: {
+                Authorization: `bearer ` + props.token,
+            },
+        });
         const data = await response.json();
         setWalks(data);
     };

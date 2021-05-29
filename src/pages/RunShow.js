@@ -21,7 +21,7 @@ function Show(props) {
     };
 
     const loaded = () => {
-        const run = props.runs.filter(
+        const run = props.runs.all_runs.filter(
             (r) => r._id === props.match.params.id
         )[0];
         return typeof run === "undefined" ? (
