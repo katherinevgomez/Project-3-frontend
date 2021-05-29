@@ -195,6 +195,7 @@ function Show(props) {
                                     className="row twelve columns"
                                     style={{ marginTop: "15px" }}
                                 >
+
                                     <div className="six columns">
                                         <label htmlFor="title">Title</label>
                                         <input
@@ -327,6 +328,42 @@ function Show(props) {
                                 onSubmit={(event) =>
                                     processDelete(event, walk._id)
                                 }
+
+                                    {" "}
+                                    <option value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>} */}
+                            <div className="twelve columns">
+                                <label htmlFor="name">Name</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="name"
+                                    value={
+                                        typeof editForm?.name === "string"
+                                            ? editForm.name
+                                            : walk.name
+                                    }
+                                    onChange={handleChange}
+                                />
+                            </div>
+                        </div>
+                        <br />
+                        <div className="row">
+                            <button className="updateBtn"
+                                style={{ backgroundColor: "white" }}
+                                type="submit"
+
                             >
                                 <button className="delete-button" type="submit">
                                     Delete Walk
