@@ -29,6 +29,7 @@ function Hike(props) {
     };
 
     const loaded = () => {
+
         return props.hikes.all_hikes.map((hike) => (
             <div key={hike._id} className="one-third column hikeIcons">
                 <img src={hike.image} alt={hike.name} />
@@ -46,6 +47,18 @@ function Hike(props) {
             </div>
         ));
     };
+
+        return props.hikes.map((hike) => (
+
+                    <div key={hike._id} className="one-third column hikeIcons">
+                        <img src={hike.image} alt={hike.name} />
+                        <Link to={`/hike/${hike._id}`} style={{textDecoration: 'none'}}>
+                            <h4>{hike.title}</h4>
+                        </Link>
+                    </div>
+
+        ))
+    }
 
     const loading = () => {
         return <h1>Loading...</h1>;

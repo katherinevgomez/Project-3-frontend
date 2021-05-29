@@ -55,3 +55,22 @@
 .dark p {
     color: white;
 }
+
+.dark {
+  background: #222222;
+}
+.dark h1 {
+  color: white;
+}
+.dark h2 {
+  color: white;
+}
+.dark h3 {
+  color: white;
+}
+.dark h4 {
+  color: white;
+}
+.dark p {
+  color: white;
+}
