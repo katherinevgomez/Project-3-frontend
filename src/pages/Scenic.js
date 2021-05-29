@@ -33,7 +33,7 @@ function Scenic(props) {
             <div key={walk._id} className="one-third column scenicIcons">
                 <img src={walk.image} alt={walk.name} />
                 <Link
-                    to={`/walk/${walk._id}`}
+                    to={`/scenic/${walk._id}`}
                     style={{ textDecoration: "none" }}
                 >
                     <h4>{walk.title}</h4>
