@@ -29,7 +29,6 @@ function Run(props) {
     };
 
     const loaded = () => {
-
         return props.runs.all_runs.map((run) => (
             <div key={run._id} className="four columns runIcons">
                 <img src={run.image} alt={run.name} />
@@ -44,19 +43,6 @@ function Run(props) {
             </div>
         ));
     };
-
-        return props.runs.map((run) => (
-
-                    <div key={run._id} className="four columns runIcons">
-                        <img src={run.image} alt={run.name}/>
-                        <Link to={`/run/${run._id}`} style={{textDecoration:'none'}}>  
-                            <h4>{run.title}</h4>
-                        </Link>
-                    </div>
-
-        ))
-    }
-
 
     const loading = () => {
         return <h1>Loading...</h1>;
