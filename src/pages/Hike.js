@@ -31,20 +31,11 @@ function Hike(props) {
     const loaded = () => {
         return props.hikes.all_hikes.map((hike) => (
             <div key={hike._id} className="one-third column hikeIcons">
+                <img src={hike.image} alt={hike.name} />
                 <Link
                     to={`/hike/${hike._id}`}
-                    style={{ textDecoration: "none", color: "teal" }}
+                    style={{ textDecoration: "none" }}
                 >
-                    <img
-                        src={hike.image}
-                        alt={hike.name}
-                        style={{
-                            width: "100%",
-                            maxHeight: "220px",
-                            borderTopLeftRadius: "10px",
-                            borderTopRightRadius: "10px",
-                        }}
-                    />
                     <h4>{hike.title}</h4>
                 </Link>
                 {props.hikes.user_created.includes(hike._id) ? (
