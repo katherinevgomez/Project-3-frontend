@@ -28,7 +28,6 @@ function Main(props) {
             },
         });
         const data = await response.json();
-        console.log(data);
         setRuns(data);
     };
 

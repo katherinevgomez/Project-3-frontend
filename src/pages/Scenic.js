@@ -29,7 +29,7 @@ function Scenic(props) {
     };
 
     const loaded = () => {
-        return props.walks.map((walk) => (
+        return props.walks.all_walks.map((walk) => (
             <div key={walk._id} className="one-third column scenicIcons">
                 <Link
                     to={`/scenic/${walk._id}`}
@@ -47,6 +47,11 @@ function Scenic(props) {
                     />
                     <h4>{walk.title}</h4>
                 </Link>
+                {props.walks.user_created.includes(walk._id) ? (
+                    <p>yours</p>
+                ) : (
+                    <p>not yours</p>
+                )}
             </div>
         ));
     };
@@ -119,7 +124,7 @@ function Scenic(props) {
                             id="location"
                             value={newForm.location}
                             name="location"
-                            placeholder="Runtown, FL"
+                            placeholder="Walktown, FL"
                             onChange={handleChange}
                         />
                     </div>
@@ -132,7 +137,7 @@ function Scenic(props) {
                             id="name"
                             value={newForm.name}
                             name="name"
-                            placeholder="Joe Runner"
+                            placeholder="Joe Walker"
                             onChange={handleChange}
                         />
                     </div>

@@ -50,7 +50,7 @@ function Run(props) {
                 {props.runs.user_created.includes(run._id) ? (
                     <p>yours</p>
                 ) : (
-                    <p>others</p>
+                    <p>not yours</p>
                 )}
             </div>
         ));
