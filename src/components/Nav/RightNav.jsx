@@ -10,8 +10,8 @@ const Ul = styled.ul`
         z-index: 15;
 
         li {
-            padding: 18px 50px;
-            font-size: 25px;
+            padding: 30px 30px;
+            font-size: 20px;
             font-weight: 900;
         }
 
@@ -45,6 +45,11 @@ function RightNav({open}) {
             <li>
                 <Link to="/scenic" style={{textDecoration: 'none', color: 'black'}}>
                 <div className="navItem">Walk</div>
+                </Link>
+            </li>
+            <li>
+                <Link to="/" style={{textDecoration: 'none', color: 'red'}}>
+                    <div className="navItem">Logout</div>
                 </Link>
             </li>
         </Ul>
