@@ -21,19 +21,34 @@ function Main(props) {
     const WalkURL = `http://localhost:${API_PORT}/scenic/`;
 
     const getRuns = async () => {
-        const response = await fetch(RunURL);
+        const response = await fetch(RunURL, {
+            method: "get",
+            headers: {
+                Authorization: `bearer ` + props.token,
+            },
+        });
         const data = await response.json();
         setRuns(data);
     };
 
     const getHikes = async () => {
-        const response = await fetch(HikeURL);
+        const response = await fetch(HikeURL, {
+            method: "get",
+            headers: {
+                Authorization: `bearer ` + props.token,
+            },
+        });
         const data = await response.json();
         setHikes(data);
     };
 
     const getWalks = async () => {
-        const response = await fetch(WalkURL);
+        const response = await fetch(WalkURL, {
+            method: "get",
+            headers: {
+                Authorization: `bearer ` + props.token,
+            },
+        });
         const data = await response.json();
         setWalks(data);
     };
@@ -41,8 +56,14 @@ function Main(props) {
     const createRuns = async (run) => {
         await fetch(RunURL, {
             method: "post",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(run),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ` + props.token,
+            },
+            body: JSON.stringify({
+                ...run,
+                type: "runs",
+            }),
         });
         getRuns();
     };
@@ -50,8 +71,14 @@ function Main(props) {
     const createHikes = async (hike) => {
         await fetch(HikeURL, {
             method: "post",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(hike),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ` + props.token,
+            },
+            body: JSON.stringify({
+                ...hike,
+                type: "hikes",
+            }),
         });
         getHikes();
     };
@@ -59,8 +86,14 @@ function Main(props) {
     const createWalks = async (walk) => {
         await fetch(WalkURL, {
             method: "post",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(walk),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ` + props.token,
+            },
+            body: JSON.stringify({
+                ...walk,
+                type: "scenics",
+            }),
         });
         getWalks();
     };
@@ -68,6 +101,9 @@ function Main(props) {
     const deleteRun = async (id) => {
         await fetch(`${RunURL}${id}`, {
             method: "delete",
+            headers: {
+                Authorization: `bearer ` + props.token,
+            },
         });
         getRuns();
     };
@@ -75,6 +111,9 @@ function Main(props) {
     const deleteHike = async (id) => {
         await fetch(`${HikeURL}${id}`, {
             method: "delete",
+            headers: {
+                Authorization: `bearer ` + props.token,
+            },
         });
         getHikes();
     };
@@ -82,6 +121,9 @@ function Main(props) {
     const deleteWalk = async (id) => {
         await fetch(`${WalkURL}${id}`, {
             method: "delete",
+            headers: {
+                Authorization: `bearer ` + props.token,
+            },
         });
         getWalks();
     };
@@ -89,7 +131,10 @@ function Main(props) {
     const updateRun = async (updateRun, id) => {
         await fetch(`${RunURL}${id}`, {
             method: "put",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ` + props.token,
+            },
             body: JSON.stringify(updateRun),
         });
         getRuns();
@@ -98,7 +143,10 @@ function Main(props) {
     const updateHike = async (updateHike, id) => {
         await fetch(`${HikeURL}${id}`, {
             method: "put",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ` + props.token,
+            },
             body: JSON.stringify(updateHike),
         });
         getHikes();
@@ -107,7 +155,10 @@ function Main(props) {
     const updateWalk = async (updateWalk, id) => {
         await fetch(`${WalkURL}${id}`, {
             method: "put",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `bearer ` + props.token,
+            },
             body: JSON.stringify(updateWalk),
         });
         getWalks();

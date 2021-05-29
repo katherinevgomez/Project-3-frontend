@@ -18,7 +18,11 @@ async function loginUser(credentials) {
     }).then((data) => data.json());
 }
 
-export default function Login({ setToken, toggleWantsSignup }) {
+export default function Login({
+    setToken,
+    toggleWantsSignup,
+    setUserName: setUser,
+}) {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
     const handleSubmit = async (e) => {
@@ -28,6 +32,7 @@ export default function Login({ setToken, toggleWantsSignup }) {
             password,
         });
         setToken(token);
+        setUser(username);
     };
     return (
         <div
@@ -39,9 +44,10 @@ export default function Login({ setToken, toggleWantsSignup }) {
                 id="loginHead"
                 style={{ backgroundColor: "white", padding: "50px" }}
             >
-                “I often hear someone say I’m not a real runner. We are all runners, some just run faster than others. I never met a fake runner.” 
-                <br/>
-                – Bart Yasso
+                “I often hear someone say I’m not a real runner. We are all
+                runners, some just run faster than others. I never met a fake
+                runner.”
+                <br />– Bart Yasso
             </h5>
             <img
                 className="row"
@@ -50,7 +56,11 @@ export default function Login({ setToken, toggleWantsSignup }) {
                 alt="on the run"
                 style={{ margin: "50px" }}
             />
-            <form className="container loginForm" style={{border:'solid rgb(68,240,226) 2px'}} onSubmit={handleSubmit}>
+            <form
+                className="container loginForm"
+                style={{ border: "solid rgb(68,240,226) 2px" }}
+                onSubmit={handleSubmit}
+            >
                 {/* <div className="row">
                     <h3 style={{ color: "black" }}>Login</h3>
                 </div> */}
@@ -71,14 +81,19 @@ export default function Login({ setToken, toggleWantsSignup }) {
                 <div className="row">
                     <button
                         type="submit"
-                        style={{ backgroundColor: "rgb(68,240,226)", color: "black" }}
+                        style={{
+                            backgroundColor: "rgb(68,240,226)",
+                            color: "black",
+                        }}
                     >
                         Login
                     </button>
                 </div>
                 <div className="row">
                     <Link to="/signup" onClick={(e) => toggleWantsSignup(e)}>
-                        <button style={{color:'black', marginTop:'40px'}}>Or Sign Up</button>
+                        <button style={{ color: "black", marginTop: "40px" }}>
+                            Or Sign Up
+                        </button>
                     </Link>
                 </div>
             </form>

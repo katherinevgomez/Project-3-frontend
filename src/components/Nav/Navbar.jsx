@@ -1,9 +1,9 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import styled from 'styled-components'
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 // added for logout
-import { GlobalCtx } from "../App";
-import Burger from './Burger'
+// import { GlobalCtx } from "../App/useToken";
+import Burger from "./Burger";
 
 const Nav = styled.nav`
     width: 100%;
@@ -16,40 +16,42 @@ const Nav = styled.nav`
 
     .logo {
         padding: 10px 0;
-
     }
-
-
 `;
 
-// lines 27-40 added for logout 
+// lines 27-40 added for logout
 const Navbar = (props) => {
-    const { gState, setGState } = React.useContext(GlobalCtx);
+    // const { gState, setGState } = React.useContext(GlobalCtx);
 
     const logout = (
         <Link>
-          <h2
-            onClick={() => {
-              window.localStorage.removeItem("token");
-              setGState({ ...gState, token: null });
-            }}
-          >
-            Logout
-          </h2>
+            <h2
+                onClick={() => {
+                    window.localStorage.removeItem("token");
+                    // setGState({ ...gState, token: null });
+                }}
+            >
+                Logout
+            </h2>
         </Link>
-      );
+    );
 
     return (
         <Nav className="twelve columns">
             <div className="logo">
-            <Link to="/" style={{textDecoration: 'none'}}>
-                <img className="navItem" style={{maxWidth: '150px'}} src="https://i.imgur.com/sgn5zt0.png" alt="Home Button" />
-                {/* <div className="navItem" style={{color: 'black'}}>Logo Image Here</div> */}
-            </Link>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                    <img
+                        className="navItem"
+                        style={{ maxWidth: "150px" }}
+                        src="https://i.imgur.com/sgn5zt0.png"
+                        alt="Home Button"
+                    />
+                    {/* <div className="navItem" style={{color: 'black'}}>Logo Image Here</div> */}
+                </Link>
             </div>
             <Burger />
         </Nav>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;
