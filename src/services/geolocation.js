@@ -22,7 +22,7 @@ export const getLatLngFromInput = async (address) => {
         coor.lat = data.results[0].geometry.location.lat;
         coor.lng = data.results[0].geometry.location.lng;
     } catch (error) {
-        console.log(error);
+        // console.log(error);
     }
 
     return new Promise(function (myResolve) {

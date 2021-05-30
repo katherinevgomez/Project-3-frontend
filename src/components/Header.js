@@ -6,6 +6,7 @@ function Header(props) {
     return (
         <nav>
             <Navbar history={props.history} />
+            <Navbar />
         </nav>
     )
 }

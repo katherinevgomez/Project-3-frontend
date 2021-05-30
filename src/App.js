@@ -82,7 +82,6 @@ function App() {
         }, 1);
     }
     return (
-        <BrowserRouter>
         <div className="container">
             <div className="row">
                 <div className="twelve columns">
@@ -96,6 +95,7 @@ function App() {
             </div>
             {/* Added the following as well */}
             {/* <h1>RUN</h1> this doesn't work for anything but run so commented out because very confusing */}
+            <BrowserRouter>
                 <Switch>
                     <Route path="/dashboard">
                         <Dashboard />
@@ -104,6 +104,7 @@ function App() {
                         <Preferences />
                     </Route>
                 </Switch>
+            </BrowserRouter>
             {/* Added the above, Lines 38-49 */}
             <div className="row">
                 <div className="twelve columns">
@@ -111,7 +112,6 @@ function App() {
                 </div>
             </div>
         </div>
-        </BrowserRouter>
     );
 }
 
