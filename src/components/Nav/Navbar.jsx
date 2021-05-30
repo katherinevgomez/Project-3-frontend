@@ -21,29 +21,29 @@ const Nav = styled.nav`
 
 // lines 27-40 added for logout
 const Navbar = (props) => {
-    let user = JSON.parse(localStorage.getItem("user-info"))
-    const history = useHistory();
-    function refreshPage() {
-        window.location.reload(false);
-    }
-    function logOut() {  
-        localStorage.clear();
-        history.push("/");
-        refreshPage()
-    }
+    // let user = JSON.parse(localStorage.getItem("user-info"));
+    // const history = useHistory();
+    // function refreshPage() {
+    //     window.location.reload(false);
+    // }
+    // function logOut(e) {
+    //     localStorage.clear();
+    //     history.push("/");
+    //     refreshPage();
+    // }
 
-    const logout = (
-        <Link>
-            <h2
-                onClick={() => {
-                    window.localStorage.removeItem("token");
-                    // setGState({ ...gState, token: null });
-                }}
-            >
-                Logout
-            </h2>
-        </Link>
-    );
+    // const logout = (
+    //     <Link>
+    //         <h2
+    //             onClick={() => {
+    //                 window.localStorage.removeItem("token");
+    //                 // setGState({ ...gState, token: null });
+    //             }}
+    //         >
+    //             Logout
+    //         </h2>
+    //     </Link>
+    // );
 
     return (
         <Nav className="twelve columns">
