@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import useToken from "../App/useToken";
 
 
 const Ul = styled.ul`
@@ -29,7 +30,31 @@ const Ul = styled.ul`
         }
 `;
 
-function RightNav({open}) {
+function RightNav({props, open}) {
+    let user = JSON.parse(localStorage.getItem("user-info"))
+    const history = useHistory();
+    function refreshPage() {
+        window.location.reload(false);
+    }
+    function logOut() {  
+        localStorage.clear();
+        history.push("/");
+        refreshPage()
+    }
+
+
+    const logout = (
+        <Link>
+            <h2
+                onClick={() => {
+                    window.localStorage.removeItem("token");
+                    // setGState({ ...gState, token: null });
+                }} 
+            >
+            </h2>
+        </Link>
+    );
+
     return (
         <Ul open={open}>
             <li>
@@ -49,7 +74,7 @@ function RightNav({open}) {
             </li>
             <li>
                 <Link to="/" style={{textDecoration: 'none', color: 'red'}}>
-                    <div className="navItem">Logout</div>
+                <div className="navItem" onClick={logOut}>Logout</div>
                 </Link>
             </li>
         </Ul>

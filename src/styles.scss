@@ -176,6 +176,7 @@
     padding: 0;
     border: 0;
 }
+
 .showPage {
     text-align: center;
     border-bottom: solid slategray 2px;
@@ -210,4 +211,10 @@
     border: solid 3px greenyellow;
     color: black;
     background-color: black;
+}
+
+@media (max-width: 768px) {
+    #showImage {
+        width: 220px;
+    }
 }

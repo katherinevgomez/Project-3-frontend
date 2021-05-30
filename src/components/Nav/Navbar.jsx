@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 // added for logout
 // import { GlobalCtx } from "../App/useToken";
@@ -21,7 +21,16 @@ const Nav = styled.nav`
 
 // lines 27-40 added for logout
 const Navbar = (props) => {
-    // const { gState, setGState } = React.useContext(GlobalCtx);
+    let user = JSON.parse(localStorage.getItem("user-info"))
+    const history = useHistory();
+    function refreshPage() {
+        window.location.reload(false);
+    }
+    function logOut() {  
+        localStorage.clear();
+        history.push("/");
+        refreshPage()
+    }
 
     const logout = (
         <Link>
