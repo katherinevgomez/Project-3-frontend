@@ -31,14 +31,20 @@ function Run(props) {
     const loaded = () => {
         return props.runs.all_runs.map((run) => (
             <div key={run._id} className="four columns runIcons">
-                <img src={run.image} alt={run.name} />
+                {run.image ? (
+                    <img src={run.image} alt={run.name} />
+                ) : (
+                    <div></div> // if null styling messed up
+                )}
                 <Link to={`/run/${run._id}`} style={{ textDecoration: "none" }}>
                     <h4>{run.title}</h4>
                 </Link>
                 {props.runs.user_created.includes(run._id) ? (
-                    <p>yours</p>
+                    <p>by {props.runs.username} (you)</p>
+                ) : run.name ? (
+                    <p>by {run.name}</p>
                 ) : (
-                    <p>not yours</p>
+                    <p style={{ color: "transparent" }}>unnamed post</p> // needs to have some text for styling. i think its a nice easter egg to see the transparent text on highlight
                 )}
             </div>
         ));

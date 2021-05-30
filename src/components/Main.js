@@ -60,10 +60,7 @@ function Main(props) {
                 "Content-Type": "application/json",
                 Authorization: `bearer ` + props.token,
             },
-            body: JSON.stringify({
-                ...run,
-                type: "runs",
-            }),
+            body: JSON.stringify(run),
         });
         getRuns();
     };
@@ -75,10 +72,7 @@ function Main(props) {
                 "Content-Type": "application/json",
                 Authorization: `bearer ` + props.token,
             },
-            body: JSON.stringify({
-                ...hike,
-                type: "hikes",
-            }),
+            body: JSON.stringify(hike),
         });
         getHikes();
     };
@@ -90,10 +84,7 @@ function Main(props) {
                 "Content-Type": "application/json",
                 Authorization: `bearer ` + props.token,
             },
-            body: JSON.stringify({
-                ...walk,
-                type: "scenics",
-            }),
+            body: JSON.stringify(walk),
         });
         getWalks();
     };
@@ -164,8 +155,11 @@ function Main(props) {
         getWalks();
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => getRuns(), []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => getHikes(), []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => getWalks(), []);
 
     return (
