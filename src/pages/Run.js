@@ -31,21 +31,9 @@ function Run(props) {
     const loaded = () => {
         return props.runs.all_runs.map((run) => (
             <div key={run._id} className="four columns runIcons">
-                <Link
-                    to={`/run/${run._id}`}
-                    style={{ textDecoration: "none", color: "teal" }}
-                >
-                    <img
-                        src={run.image}
-                        alt={run.name}
-                        style={{
-                            width: "100%",
-                            maxHeight: "220px",
-                            borderTopLeftRadius: "10px",
-                            borderTopRightRadius: "10px",
-                        }}
-                    />
-                    <h4 style={{ fontFamily: "" }}>{run.title}</h4>
+                <img src={run.image} alt={run.name} />
+                <Link to={`/run/${run._id}`} style={{ textDecoration: "none" }}>
+                    <h4>{run.title}</h4>
                 </Link>
                 {props.runs.user_created.includes(run._id) ? (
                     <p>yours</p>

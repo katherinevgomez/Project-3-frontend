@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link, useHistory } from 'react-router-dom'
 import useToken from "../App/useToken";
 
+
 const Ul = styled.ul`
         list-style: none;
         display: flex;
@@ -53,17 +54,7 @@ function RightNav({props, open}) {
             </h2>
         </Link>
     );
-    // const {setToken, token} = useToken();
-    // const logout = (
-    //     <div>
-    //         <h2 onClick={() => {
-    //             window.localStorage.removeItem("token");
-    //             setToken("")
-    //             // props.history.push("/")
-    //         }}>
-    //             Logout
-    //         </h2>
-    //     </div>
+
     return (
         <Ul open={open}>
             <li>

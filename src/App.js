@@ -22,8 +22,21 @@ import useToken from "./components/App/useToken";
 import Header from "./components/Header";
 import Main from "./components/Main";
 
-
 function App() {
+    //darkmode
+    const [darkMode, setDarkmode] = React.useState(false);
+
+    React.useEffect(() => {
+        if (darkMode) {
+            document.body.classList.add("dark");
+        } else {
+            document.body.classList.remove("dark");
+        }
+        const json = JSON.stringify(darkMode);
+        localStorage.setItem("site-dark-mode", json);
+        const currentMode = JSON.parse(json);
+    }, [darkMode]);
+
     // added lines 26-31
     // const token = getToken();
     // const [token, setToken] = useState();
@@ -72,9 +85,13 @@ function App() {
         <BrowserRouter>
         <div className="container">
             <div className="row">
-
                 <div className="twelve columns">
-                    <Route component={Header} path="/"/>
+                    <Header />
+                    {/*darkmode button*/}
+
+                    <button onClick={() => setDarkmode(!darkMode)}>
+                        Toggle Dark Mode
+                    </button>
                 </div>
             </div>
             {/* Added the following as well */}
@@ -87,7 +104,6 @@ function App() {
                         <Preferences />
                     </Route>
                 </Switch>
-
             {/* Added the above, Lines 38-49 */}
             <div className="row">
                 <div className="twelve columns">

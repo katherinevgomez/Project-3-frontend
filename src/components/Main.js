@@ -10,7 +10,7 @@ import ScenicShow from "../pages/ScenicShow";
 
 const API_PORT = process.env.REACT_APP_DEV_API_PORT
     ? process.env.REACT_APP_DEV_API_PORT
-    : "7777";
+    : "3000";
 
 function Main(props) {
     const [runs, setRuns] = useState(null);
