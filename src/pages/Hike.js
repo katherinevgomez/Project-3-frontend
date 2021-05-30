@@ -31,7 +31,11 @@ function Hike(props) {
     const loaded = () => {
         return props.hikes.all_hikes.map((hike) => (
             <div key={hike._id} className="one-third column hikeIcons">
-                <img src={hike.image} alt={hike.name} />
+                {hike.image ? (
+                    <img src={hike.image} alt={hike.name} />
+                ) : (
+                    <div></div> // if null styling messed up
+                )}
                 <Link
                     to={`/hike/${hike._id}`}
                     style={{ textDecoration: "none" }}
@@ -39,9 +43,11 @@ function Hike(props) {
                     <h4>{hike.title}</h4>
                 </Link>
                 {props.hikes.user_created.includes(hike._id) ? (
-                    <p>yours</p>
+                    <p>by {props.hikes.username} (you)</p>
+                ) : hike.name ? (
+                    <p>by {hike.name}</p>
                 ) : (
-                    <p>not yours</p>
+                    <p style={{ color: "transparent" }}>unnamed post</p> // needs to have some text for styling. i think its a nice easter egg to see the transparent text on highlight
                 )}
             </div>
         ));

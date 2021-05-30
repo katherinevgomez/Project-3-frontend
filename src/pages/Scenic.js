@@ -31,7 +31,11 @@ function Scenic(props) {
     const loaded = () => {
         return props.walks.all_walks.map((walk) => (
             <div key={walk._id} className="one-third column scenicIcons">
-                <img src={walk.image} alt={walk.name} />
+                {walk.image ? (
+                    <img src={walk.image} alt={walk.name} />
+                ) : (
+                    <div></div> // if null styling messed up
+                )}
                 <Link
                     to={`/scenic/${walk._id}`}
                     style={{ textDecoration: "none" }}
@@ -39,9 +43,11 @@ function Scenic(props) {
                     <h4>{walk.title}</h4>
                 </Link>
                 {props.walks.user_created.includes(walk._id) ? (
-                    <p>yours</p>
+                    <p>by {props.walks.username} (you)</p>
+                ) : walk.name ? (
+                    <p>by {walk.name}</p>
                 ) : (
-                    <p>not yours</p>
+                    <p style={{ color: "transparent" }}>unnamed post</p> // needs to have some text for styling. i think its a nice easter egg to see the transparent text on highlight
                 )}
             </div>
         ));
