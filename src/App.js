@@ -34,7 +34,7 @@ function App() {
         }
         const json = JSON.stringify(darkMode);
         localStorage.setItem("site-dark-mode", json);
-        const currentMode = JSON.parse(json);
+        // const currentMode = JSON.parse(json);
     }, [darkMode]);
 
     // added lines 26-31

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link, useHistory } from "react-router-dom";
-import useToken from "../App/useToken";
+// import useToken from "../App/useToken";
 
 const Ul = styled.ul`
     list-style: none;
@@ -31,7 +31,7 @@ const Ul = styled.ul`
 `;
 
 function RightNav({ props, open }) {
-    let user = JSON.parse(localStorage.getItem("user-info"));
+    // let user = JSON.parse(localStorage.getItem("user-info"));
     const history = useHistory();
     function refreshPage() {
         window.location.reload(false);

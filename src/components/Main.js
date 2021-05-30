@@ -155,8 +155,11 @@ function Main(props) {
         getWalks();
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => getRuns(), []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => getHikes(), []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => getWalks(), []);
 
     return (
