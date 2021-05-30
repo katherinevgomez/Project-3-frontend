@@ -1,12 +1,13 @@
 // added lines (2-19)
-// import React, { useState } from 'react';
-import React from 'react';
-import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Dashboard from './components/Dashboard/Dashboard';
-import Login from './components/Login/Login';
-import Preferences from './components/Preferences/Preferences';
-import useToken from './components/App/useToken';
+import React, { useState } from "react";
+// import React from "react";
+import "./App.css";
+import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Login from "./components/Login/Login";
+import Signup from "./pages/Signup";
+import Preferences from "./components/Preferences/Preferences";
+import useToken from "./components/App/useToken";
 
 // function setToken(userToken) {
 //   sessionStorage.setItem('token', JSON.stringify(userToken));
@@ -18,45 +19,84 @@ import useToken from './components/App/useToken';
 //   return userToken?.token
 // }
 
-import Header from "./components/Header"
-import Main from "./components/Main"
+import Header from "./components/Header";
+import Main from "./components/Main";
+
 
 function App() {
-  // added lines 26-31
-  // const token = getToken();
-  // const [token, setToken] = useState();
-  const { token, setToken } = useToken();
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
-  return (
-    <div className="container">
-      <div className="row">
-        <div className="twelve columns">
-          <Header />
-        </div>
-      </div>
-      {/* Added the following as well */}
-      <h1>RUN</h1>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/preferences">
-            <Preferences />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-      {/* Added the above, Lines 38-49 */}
-      <div className="row">
-        <div className="twelve columns">
-          <Main />
-        </div>
-      </div>
+    // added lines 26-31
+    // const token = getToken();
+    // const [token, setToken] = useState();
+    const { token, setToken } = useToken();
+    const [userName, setUserName] = useState("");
+    const [wantsSignup, setWantsSignup] = useState(
+        window.location?.href.split("/").pop() === "signup"
+    );
+    const history = useHistory();
+    const toggleWantsSignup = (event) => {
+        event.preventDefault();
+        setWantsSignup(!wantsSignup);
+    };
+    if (!token) {
+        if (wantsSignup) {
+            setTimeout(() => {
+                // hack that squashes warning if immediately history.push before return...
+                history.push("/signup");
+            }, 1);
+            return (
+                <Route exact path="/signup">
+                    <Signup
+                        wantsSignup={wantsSignup}
+                        toggleWantsSignup={toggleWantsSignup}
+                    />
+                </Route>
+            );
+        } else {
+            return (
+                <Login
+                    setToken={setToken}
+                    wantsSignup={wantsSignup}
+                    toggleWantsSignup={toggleWantsSignup}
+                    setUserName={setUserName}
+                />
+            );
+        }
+    }
+    if (window.location?.href.split("/").pop() === "signup") {
+        setTimeout(() => {
+            // hack that squashes warning if immediately history.push before return...
+            history.push("/");
+        }, 1);
+    }
+    return (
+        <BrowserRouter>
+        <div className="container">
+            <div className="row">
 
-    </div>
-  );
+                <div className="twelve columns">
+                    <Route component={Header} path="/"/>
+                </div>
+            </div>
+            {/* Added the following as well */}
+            {/* <h1>RUN</h1> this doesn't work for anything but run so commented out because very confusing */}
+                <Switch>
+                    <Route path="/dashboard">
+                        <Dashboard />
+                    </Route>
+                    <Route path="/preferences">
+                        <Preferences />
+                    </Route>
+                </Switch>
+
+            {/* Added the above, Lines 38-49 */}
+            <div className="row">
+                <div className="twelve columns">
+                    <Main userName={userName} token={token} />
+                </div>
+            </div>
+        </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;

@@ -1,26 +1,10 @@
-
-Link {
-    text-decoration: none;
-}
-
-.nav {
-    display: flex;
-    justify-content: space-around;
-    background-color: black;
-    padding: 10px;
-    margin: 20px;
-    border-radius: 10px;
-}
-
-.navItem {
-    font-size: 20px;
-    font-weight: 900;
-    color: white;
-    text-decoration: none;
-}
-
-.navItem:hover {
-    color: hotpink;
+@media (max-width: 768px) {
+    .navItem {
+        font-size: 20px;
+        font-weight: 900;
+        color: white;
+        text-decoration: none;
+    }
 }
 
 .iconsRow {
@@ -53,14 +37,22 @@ Link {
     font-size: 20px;
 }
 
-.description {
+.descContainer {
     margin-top: 100px;
     padding: 100px 20px 100px 20px;
-    color: white;
     background-size: cover;
     background-image: url("https://i.imgur.com/S4jBgWP.jpg");
     border-radius: 10px;
-    font-size: 20px;
+
+    .description {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 600;
+        color: white;
+        background-color: rgb(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+    }
 }
 
 .runForm, .hikeForm, .scenicForm {
@@ -72,18 +64,18 @@ Link {
 }
 
 .runForm{
-    background-image: url("https://image.freepik.com/free-photo/watercolor-light-purple-white-gradient-background_145343-661.jpg");
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/826/934/351/pink-white-blue-purple-paint-splash-hd-wallpaper-preview.jpg");
     box-shadow: 10px 10px 8px rgb(101, 33, 120);
 }
 
 .hikeForm{
-    background-image: url("https://i.pinimg.com/originals/3e/8e/bb/3e8ebbc3e95fc28bbf666c52347a2ad4.jpg");
+    background-image: url("https://p4.wallpaperbetter.com/wallpaper/94/966/328/pink-white-blue-purple-paint-splash-hd-wallpaper-preview.jpg");
     box-shadow: 10px 10px 8px rgb(0, 108, 108);
 
 }
 
 .scenicForm {
-    background-image: url("https://image.shutterstock.com/image-illustration/abstract-pink-white-soft-cloud-260nw-1204478437.jpg");
+    background-image: url("https://images.wallpaperscraft.com/image/paint_blue_pink_145378_3840x2160.jpg");
     box-shadow: 10px 10px 8px rgb(148, 61, 105);
 
 }
@@ -92,13 +84,20 @@ Link {
     width: 190px;
 }
 
+.runIndex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .runIcons, .hikeIcons, .scenicIcons {
     background-color: white;
     margin: 25px 0 25px 0;
     border-radius: 10px;
     text-align: center;
     min-height: 225px;
-    box-shadow: 10px 10px 8px gray;
+    max-width: 225px;
+    box-shadow:  5px  5px 5px gray;
 }
 
 #run {
@@ -112,8 +111,10 @@ Link {
 }
 
 #scenic {
-    background-image: stretch;
-    background-image: url("https://i.imgur.com/2YYw7x2.jpg");
+    background-image: cover;
+    background-position: center;
+    background-size: fill;
+    background-image: url("https://i.imgur.com/l5Pm1Nt.jpg");
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
@@ -137,4 +138,39 @@ Link {
   margin: 0;
   padding: 0;
   border: 0;
+}
+.showPage {
+    text-align: center;
+    border-bottom: solid slategray 2px;
+    padding-bottom: 10px;
+}
+
+#showImage {
+    border-radius: 10px;
+}
+
+.showUpdate {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: lightgray;
+    background-image: url("https://i.imgur.com/S4jBgWP.jpg");
+    border: solid black 2px;
+    border-radius: 10px;
+}
+
+.updateSubmit {
+    background-color: white;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    #showImage {
+        width: 220px;
+    }
 }
