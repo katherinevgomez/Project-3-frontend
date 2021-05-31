@@ -166,7 +166,7 @@ function Main(props) {
         <main>
             <Switch>
                 <Route exact path="/">
-                    <Home />
+                    <Home username={runs?.username} />
                 </Route>
                 <Route exact path="/run">
                     <Run runs={runs} createRuns={createRuns} />
