@@ -161,6 +161,47 @@
     background-image: url("https://i.imgur.com/l5Pm1Nt.jpg");
 }
 
+@media (min-width: 768px) {
+
+    #showName {
+        border-bottom: solid 2px black;
+    }
+
+    #showTitle {
+        height: 100%;
+        border-right: solid 2px black;
+        border-bottom: solid 2px black;
+    }
+
+    #showDistance {
+        height: 100%;
+        border-left: solid 2px black;
+        border-bottom: solid 2px black;
+    }
+
+    #showDiff {
+        border-top: solid 2px black;
+        border-right: solid 2px black;
+        padding-top: 10px;
+    }
+
+    #showLocation {
+        border-top: solid 2px black;
+        border-left: solid 2px black;
+        padding-top: 10px;
+    }
+
+    #showWalkLocation {
+        border-top: solid black 2px;
+        padding-top: 10px
+    }
+}
+
+.showPage p {
+    color: rgb(0,194,203);
+    font-size: 20px;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap");
 
 .h1 {

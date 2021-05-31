@@ -45,6 +45,44 @@
 .dark #logoutBtn {
     color: red;
 }
+.dark .showPage p {
+    color: rgb(64,221,233);
+}
+@media (min-width: 768px) {
+
+    .dark #showName {
+        border-bottom: solid 2px white;
+    }
+
+    .dark #showTitle {
+        height: 100%;
+        border-right: solid 2px white;
+        border-bottom: solid 2px white;
+    }
+
+    .dark #showDistance {
+        height: 100%;
+        border-left: solid 2px white;
+        border-bottom: solid 2px white;
+    }
+
+    .dark #showDiff {
+        border-top: solid 2px white;
+        border-right: solid 2px white;
+        padding-top: 10px;
+    }
+
+    .dark #showLocation {
+        border-top: solid 2px white;
+        border-left: solid 2px white;
+        padding-top: 10px;
+    }
+
+    .dark #showWalkLocation {
+        border-top: solid white 2px;
+        padding-top: 10px
+    }
+}
 .dark h1 {
     color: white;
 }
@@ -55,6 +93,9 @@
     color: white;
 }
 .dark h4 {
+    color: white;
+}
+.dark h5 {
     color: white;
 }
 .dark p {

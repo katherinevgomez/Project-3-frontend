@@ -2,7 +2,7 @@
     height: 600px;
     width: 600px;
     border-radius: 300px;
-    /* border: 2px solid green; */
+    border: solid 5px rgb(3,182,227);
 }
 
 @media (max-width: 768px) {
