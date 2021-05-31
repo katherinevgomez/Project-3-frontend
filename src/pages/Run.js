@@ -30,7 +30,7 @@ function Run(props) {
 
     const loaded = () => {
         return props.runs.all_runs.map((run) => (
-            <div key={run._id} className="four columns runIcons">
+            <div key={run._id} className="one-third column runIcons">
                 {run.image ? (
                     <img src={run.image} alt={run.name} />
                 ) : (
@@ -56,7 +56,7 @@ function Run(props) {
 
     return (
         <section>
-            <form onSubmit={handleSubmit} className="container runForm">
+            <form onSubmit={handleSubmit} className=" runForm">
                 <div className="row">
                     <h2>Post A New Run</h2>
                 </div>

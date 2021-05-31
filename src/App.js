@@ -87,9 +87,8 @@ function App() {
                 <div className="twelve columns">
                     <Header />
                     {/*darkmode button*/}
-
-                    <button onClick={() => setDarkmode(!darkMode)}>
-                        Toggle Dark Mode
+                    <button className="darkMode" onClick={() => setDarkmode(!darkMode)}>
+                        Dark Mode
                     </button>
                 </div>
             </div>

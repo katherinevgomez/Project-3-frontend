@@ -60,7 +60,7 @@ function Scenic(props) {
 
     return (
         <section>
-            <form onSubmit={handleSubmit} className="container scenicForm">
+            <form onSubmit={handleSubmit} className=" scenicForm">
                 <div className="row">
                     <h2>Post A New Walk</h2>
                 </div>

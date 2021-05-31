@@ -41,6 +41,11 @@
     font-size: 20px;
 }
 
+.darkMode {
+    background-color: rgb(238, 238, 238);
+    color: gray;
+}
+
 .descContainer {
     margin-top: 100px;
     padding: 100px 20px 100px 20px;
@@ -67,6 +72,7 @@
     border-radius: 10px;
     background-color: lightgray;
     background-size: cover;
+    font-size: 20px;
 }
 
 .runForm {
