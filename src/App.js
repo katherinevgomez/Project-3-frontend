@@ -88,7 +88,7 @@ function App() {
                     <Header />
                     {/*darkmode button*/}
                     <button className="darkMode" onClick={() => setDarkmode(!darkMode)}>
-                        Dark Mode
+                        Toggle Theme
                     </button>
                 </div>
             </div>
