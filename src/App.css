@@ -37,6 +37,9 @@
 .dark .descContainer {
     background-image: url('https://theforum.columbia.edu/sites/default/files/styles/cu_crop/public/content/images/ONYX_FOALER_Final.jpg?itok=GH06ZGUj');
 }
+.dark #logoutBtn {
+    color: red;
+}
 .dark h1 {
     color: white;
 }
