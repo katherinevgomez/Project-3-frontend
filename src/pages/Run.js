@@ -68,7 +68,8 @@ function Run(props) {
                             id="title"
                             value={newForm.title}
                             name="title"
-                            placeholder="Fun-Run 2"
+                            placeholder="Run Name"
+                            required
                             onChange={handleChange}
                         />
                     </div>
@@ -92,7 +93,7 @@ function Run(props) {
                             id="distance"
                             value={newForm.distance}
                             name="distance"
-                            placeholder="12 Miles"
+                            placeholder="1 Mile"
                             onChange={handleChange}
                         />
                     </div>
@@ -125,7 +126,7 @@ function Run(props) {
                             id="location"
                             value={newForm.location}
                             name="location"
-                            placeholder="Runtown, FL"
+                            placeholder="City, ST"
                             onChange={handleChange}
                         />
                     </div>
@@ -136,7 +137,7 @@ function Run(props) {
                             id="name"
                             value={newForm.name}
                             name="name"
-                            placeholder="Joe Runner"
+                            placeholder="Your Name"
                             onChange={handleChange}
                         />
                     </div>

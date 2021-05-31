@@ -71,7 +71,8 @@ function Hike(props) {
                             id="title"
                             value={newForm.title}
                             name="title"
-                            placeholder="Long Hike"
+                            placeholder="Hike Name"
+                            required
                             onChange={handleChange}
                         />
                     </div>
@@ -95,7 +96,7 @@ function Hike(props) {
                             id="distance"
                             value={newForm.distance}
                             name="distance"
-                            placeholder="20 Miles"
+                            placeholder="1 Mile"
                             onChange={handleChange}
                         />
                     </div>
@@ -128,7 +129,7 @@ function Hike(props) {
                             id="location"
                             value={newForm.location}
                             name="location"
-                            placeholder="Hiketown, FL"
+                            placeholder="City, ST"
                             onChange={handleChange}
                         />
                     </div>
@@ -139,7 +140,7 @@ function Hike(props) {
                             id="name"
                             value={newForm.name}
                             name="name"
-                            placeholder="Joe Hiker"
+                            placeholder="Your Name"
                             onChange={handleChange}
                         />
                     </div>

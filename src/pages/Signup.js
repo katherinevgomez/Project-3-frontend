@@ -54,7 +54,7 @@ export default function Signup(props) {
             />
             <form className="container loginForm" onSubmit={handleSubmit}>
                 <div className="row">
-                    <h5 style={{ color: "#36bde9" }}>Create Your Account</h5>
+                    <h5 style={{ color: "#36bde9", borderBottom:'solid black 2px',paddingBottom:'20px' }}>Create Your Account</h5>
                     {failedCreation ? (
                         <h6 style={{ color: "red" }}>
                             Signup Error. Please try again.
@@ -62,7 +62,7 @@ export default function Signup(props) {
                     ) : null}
                 </div>
                 <div className="row">
-                    <p>Username</p>
+                    <p style={{color:'rgb(3,182,227)', fontWeight:'600'}}>Username</p>
                     <input
                         type="text"
                         required
@@ -70,7 +70,7 @@ export default function Signup(props) {
                     />
                 </div>
                 <div className="row">
-                    <p>Password</p>
+                    <p style={{color:'rgb(3,182,227)', fontWeight:'600'}}>Password</p>
                     <input
                         type="password"
                         required
