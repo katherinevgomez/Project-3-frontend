@@ -30,7 +30,7 @@ function Run(props) {
 
     const loaded = () => {
         return props.runs.all_runs.map((run) => (
-            <div key={run._id} className="four columns runIcons">
+            <div key={run._id} className="one-third column runIcons">
                 {run.image ? (
                     <img src={run.image} alt={run.name} />
                 ) : (
@@ -56,7 +56,7 @@ function Run(props) {
 
     return (
         <section>
-            <form onSubmit={handleSubmit} className="container runForm">
+            <form onSubmit={handleSubmit} className=" runForm">
                 <div className="row">
                     <h2>Post A New Run</h2>
                 </div>
@@ -68,7 +68,8 @@ function Run(props) {
                             id="title"
                             value={newForm.title}
                             name="title"
-                            placeholder="Fun-Run 2"
+                            placeholder="Run Name"
+                            required
                             onChange={handleChange}
                         />
                     </div>
@@ -92,7 +93,7 @@ function Run(props) {
                             id="distance"
                             value={newForm.distance}
                             name="distance"
-                            placeholder="12 Miles"
+                            placeholder="1 Mile"
                             onChange={handleChange}
                         />
                     </div>
@@ -125,7 +126,7 @@ function Run(props) {
                             id="location"
                             value={newForm.location}
                             name="location"
-                            placeholder="Runtown, FL"
+                            placeholder="City, ST"
                             onChange={handleChange}
                         />
                     </div>
@@ -136,7 +137,7 @@ function Run(props) {
                             id="name"
                             value={newForm.name}
                             name="name"
-                            placeholder="Joe Runner"
+                            placeholder="Your Name"
                             onChange={handleChange}
                         />
                     </div>

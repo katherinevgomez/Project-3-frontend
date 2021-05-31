@@ -65,14 +65,14 @@ export default function Login({
                     <h3 style={{ color: "black" }}>Login</h3>
                 </div> */}
                 <div className="row">
-                    <p>Username</p>
+                    <p style={{color:'rgb(3,182,227)', fontWeight:'600'}}>Username</p>
                     <input
                         type="text"
                         onChange={(e) => setUserName(e.target.value)}
                     />
                 </div>
                 <div className="row">
-                    <p>Password</p>
+                    <p style={{color:'rgb(3,182,227)', fontWeight:'600'}}>Password</p>
                     <input
                         type="password"
                         onChange={(e) => setPassword(e.target.value)}

@@ -54,6 +54,7 @@ function Show(props) {
                     </div>
                     <div
                         className="row twelve columns"
+                        id="showName"
                         style={{ marginBottom: "50px" }}
                     >
                         <p>Posted by:</p>
@@ -69,10 +70,12 @@ function Show(props) {
                     </div>
                     <div
                         className="row twelve columns"
-                        style={{ height: "200px" }}
+                        style={{ height: "200px", marginBottom:'20px' }}
                     >
-                        <div className="six columns showTitle">
-                            <p>Excursion Title:</p>
+                        <div className="six columns showTitle"
+                            id="showTitle"
+                        >
+                            <p>Title:</p>
                             {run.title ? (
                                 <h3>
                                     {typeof editForm?.title === "string"
@@ -83,7 +86,9 @@ function Show(props) {
                                 <h6>no title to display</h6>
                             )}
                         </div>
-                        <div className="six columns showDistance">
+                        <div className="six columns showDistance" 
+                            id="showDistance"
+                        >
                             <p>Distance of Route:</p>
                             {run.distance ? (
                                 <h4>
@@ -100,8 +105,10 @@ function Show(props) {
                         className="row twelve columns"
                         style={{ height: "200px" }}
                     >
-                        <div className="six columns showDifficulty">
-                            <p>User Difficulty:</p>
+                        <div className="six columns showDifficulty"
+                            id="showDiff"
+                        >
+                            <p>Difficulty:</p>
                             {run.difficulty ? (
                                 <h4>
                                     {typeof editForm?.difficulty === "string"
@@ -112,7 +119,9 @@ function Show(props) {
                                 <h6>no difficulty to display</h6>
                             )}
                         </div>
-                        <div className="six columns showLocation">
+                        <div className="six columns showLocation"
+                            id="showLocation"
+                        >
                             <p>Location:</p>
                             {run.location && run.location !== "" ? (
                                 <h4>

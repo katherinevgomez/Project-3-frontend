@@ -82,7 +82,7 @@ function RightNav({ props, open }) {
             </li>
             <li>
                 <Link to="/" style={{ textDecoration: "none", color: "red" }}>
-                    <div className="navItem" onClick={(e) => logOut(e)}>
+                    <div className="navItem" id="logoutBtn" onClick={(e) => logOut(e)}>
                         Logout
                     </div>
                 </Link>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Run from "./Run";
 
 function Scenic(props) {
     const [newForm, setNewForm] = useState({
@@ -59,7 +60,7 @@ function Scenic(props) {
 
     return (
         <section>
-            <form onSubmit={handleSubmit} className="container scenicForm">
+            <form onSubmit={handleSubmit} className=" scenicForm">
                 <div className="row">
                     <h2>Post A New Walk</h2>
                 </div>
@@ -72,6 +73,7 @@ function Scenic(props) {
                             value={newForm.title}
                             name="title"
                             placeholder="Walk Name"
+                            required
                             onChange={handleChange}
                         />
                     </div>
@@ -95,7 +97,7 @@ function Scenic(props) {
                             id="distance"
                             value={newForm.distance}
                             name="distance"
-                            placeholder="12 Miles"
+                            placeholder="1 Mile"
                             onChange={handleChange}
                         />
                     </div>
@@ -121,7 +123,7 @@ function Scenic(props) {
                             id="location"
                             value={newForm.location}
                             name="location"
-                            placeholder="Walktown, FL"
+                            placeholder="City, ST"
                             onChange={handleChange}
                         />
                     </div>
@@ -134,7 +136,7 @@ function Scenic(props) {
                             id="name"
                             value={newForm.name}
                             name="name"
-                            placeholder="Joe Walker"
+                            placeholder="Your Name"
                             onChange={handleChange}
                         />
                     </div>

@@ -3,10 +3,10 @@ import React, { useState } from "react";
 // import React from "react";
 import "./App.css";
 import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
-import Dashboard from "./components/Dashboard/Dashboard";
+// import Dashboard from "./components/Dashboard/Dashboard";
 import Login from "./components/Login/Login";
 import Signup from "./pages/Signup";
-import Preferences from "./components/Preferences/Preferences";
+// import Preferences from "./components/Preferences/Preferences";
 import useToken from "./components/App/useToken";
 
 // function setToken(userToken) {
@@ -87,15 +87,14 @@ function App() {
                 <div className="twelve columns">
                     <Header />
                     {/*darkmode button*/}
-
-                    <button onClick={() => setDarkmode(!darkMode)}>
-                        Toggle Dark Mode
+                    <button className="darkMode" onClick={() => setDarkmode(!darkMode)}>
+                        Toggle Theme
                     </button>
                 </div>
             </div>
             {/* Added the following as well */}
             {/* <h1>RUN</h1> this doesn't work for anything but run so commented out because very confusing */}
-            <BrowserRouter>
+            {/* <BrowserRouter>
                 <Switch>
                     <Route path="/dashboard">
                         <Dashboard />
@@ -104,7 +103,7 @@ function App() {
                         <Preferences />
                     </Route>
                 </Switch>
-            </BrowserRouter>
+            </BrowserRouter> */}
             {/* Added the above, Lines 38-49 */}
             <div className="row">
                 <div className="twelve columns">

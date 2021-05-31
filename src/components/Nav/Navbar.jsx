@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-// added for logout
-// import { GlobalCtx } from "../App/useToken";
 import Burger from "./Burger";
 
 const Nav = styled.nav`
@@ -19,31 +17,7 @@ const Nav = styled.nav`
     }
 `;
 
-// lines 27-40 added for logout
 const Navbar = (props) => {
-    // let user = JSON.parse(localStorage.getItem("user-info"));
-    // const history = useHistory();
-    // function refreshPage() {
-    //     window.location.reload(false);
-    // }
-    // function logOut(e) {
-    //     localStorage.clear();
-    //     history.push("/");
-    //     refreshPage();
-    // }
-
-    // const logout = (
-    //     <Link>
-    //         <h2
-    //             onClick={() => {
-    //                 window.localStorage.removeItem("token");
-    //                 // setGState({ ...gState, token: null });
-    //             }}
-    //         >
-    //             Logout
-    //         </h2>
-    //     </Link>
-    // );
 
     return (
         <Nav className="twelve columns">
@@ -55,7 +29,6 @@ const Navbar = (props) => {
                         src="https://i.imgur.com/sgn5zt0.png"
                         alt="Home Button"
                     />
-                    {/* <div className="navItem" style={{color: 'black'}}>Logo Image Here</div> */}
                 </Link>
             </div>
             <Burger />

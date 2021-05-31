@@ -1,8 +1,12 @@
+import { useReducer } from "react";
 import { Link } from "react-router-dom";
 
 function Home(props) {
     return (
         <div className="">
+            <div className="row" style={{textAlign:'center', marginTop:'50px'}}>
+                <h1>Welcome, {props.username ? props.username : ""}</h1>
+            </div>
             <div className="row iconsRow">
                 <Link to="/run" className="one-third column routeIcon" id="run">
                     <p>Run</p>
@@ -22,7 +26,7 @@ function Home(props) {
                     <p>Walk</p>
                 </Link>
                 <p className="twelve columns instruction">
-                    Choose An Excursion
+                    Choose An Activity
                 </p>
                 <div className="twelve columns descContainer">
                     <p className="description">
