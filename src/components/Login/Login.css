@@ -1,0 +1,32 @@
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://www.wallpaperup.com/uploads/wallpapers/2017/09/16/1098925/e0a6d28cdbf39824a700ee228636dccd-700.jpg');
+    padding-top: 50px;
+}
+
+.loginForm {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 200px;
+    max-width: 400px;
+    /* margin-left: -4px; */
+
+}
+
+@media (max-width: 768px) {
+    .login-wrapper{
+        background-size: cover;
+        background-position: center;
+        background-image: url('https://cdn.statically.io/img/wallpaperaccess.com/full/1296485.png');
+    }
+
+    #loginHead {
+        border-radius: 10px;
+    }
+}

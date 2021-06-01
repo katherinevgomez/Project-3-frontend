@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+.dark {
+    background: #222222;
+}
+.dark .navItem{
+    color: white;
+}
+.dark .routeIcon p {
+    color: black;
+}
+.dark .routeIcon:hover p {
+    color: hotpink;
+}
+.dark .runIcons {
+    background-size: cover;
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/000/686/259/small/teal-geometric-background.jpg');
+}
+.dark .hikeIcons {
+    background-size: cover;
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/000/686/259/small/teal-geometric-background.jpg');
+}
+.dark .scenicIcons {
+    background-size: cover;
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/000/686/259/small/teal-geometric-background.jpg');
+}
+.dark .runForm {
+    color: black;
+    background-image: url("https://wallpapercave.com/wp/wp4904119.jpg");
+    box-shadow: 10px 10px 8px rgb(12, 92, 106);
+}
+.dark .hikeForm {
+    color: black;
+    background-image: url("https://wallpaperaccess.com/full/3764888.jpg");
+    box-shadow: 10px 10px 8px rgb(12, 92, 106);
+}
+.dark .scenicForm {
+    color: black;
+    background-image: url("https://p1.pxfuel.com/preview/58/729/249/painting-abstract-waves-colorful.jpg");
+    box-shadow: 10px 10px 8px rgb(12, 92, 106);
+}
+.dark .descContainer {
+    background-position: center;
+    background-size: cover;
+    background-image: url('https://i.imgur.com/84NHWnx.jpg?1');
+}
+.dark #logoutBtn {
+    color: red;
+}
+.dark .showPage p {
+    color: rgb(64,221,233);
+}
+@media (min-width: 768px) {
+
+    .dark #showName {
+        border-bottom: solid 2px white;
+    }
+
+    .dark #showTitle {
+        height: 100%;
+        border-right: solid 2px white;
+        border-bottom: solid 2px white;
+    }
+
+    .dark #showDistance {
+        height: 100%;
+        border-left: solid 2px white;
+        border-bottom: solid 2px white;
+    }
+
+    .dark #showDiff {
+        border-top: solid 2px white;
+        border-right: solid 2px white;
+        padding-top: 10px;
+    }
+
+    .dark #showLocation {
+        border-top: solid 2px white;
+        border-left: solid 2px white;
+        padding-top: 10px;
+    }
+
+    .dark #showWalkLocation {
+        border-top: solid white 2px;
+        padding-top: 10px
+    }
+}
+.dark h1 {
+    color: white;
+}
+.dark h2 {
+    color: white;
+}
+.dark h3 {
+    color: white;
+}
+.dark h4 {
+    color: white;
+}
+.dark h5 {
+    color: white;
+}
+.dark p {
+    color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dark {
+  background: #222222;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.dark h1 {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.dark h2 {
+  color: white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dark h3 {
+  color: white;
+}
+.dark h4 {
+  color: white;
+}
+.dark p {
+  color: white;
 }
