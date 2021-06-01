@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 // import React from "react";
 import "./App.css";
-import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
+import { Route, useHistory } from "react-router-dom";
 // import Dashboard from "./components/Dashboard/Dashboard";
 import Login from "./components/Login/Login";
 import Signup from "./pages/Signup";
@@ -87,7 +87,10 @@ function App() {
                 <div className="twelve columns">
                     <Header />
                     {/*darkmode button*/}
-                    <button className="darkMode" onClick={() => setDarkmode(!darkMode)}>
+                    <button
+                        className="darkMode"
+                        onClick={() => setDarkmode(!darkMode)}
+                    >
                         Toggle Theme
                     </button>
                 </div>

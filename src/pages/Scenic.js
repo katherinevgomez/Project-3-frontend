@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Run from "./Run";
 
 function Scenic(props) {
     const [newForm, setNewForm] = useState({
