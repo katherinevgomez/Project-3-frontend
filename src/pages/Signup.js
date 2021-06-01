@@ -5,8 +5,13 @@ const API_PORT = process.env.REACT_APP_DEV_API_PORT
     ? process.env.REACT_APP_DEV_API_PORT
     : "3000";
 
+const API_URL =
+    process.env.NODE_ENV === "production"
+        ? "https://on-the-run-project-3.herokuapp.com"
+        : `http://localhost:${API_PORT}`;
+
 async function signupUser(credentials) {
-    return fetch(`http://localhost:${API_PORT}/auth/signup`, {
+    return fetch(`${API_URL}/auth/signup`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -42,8 +47,7 @@ export default function Signup(props) {
                 style={{ backgroundColor: "white", padding: "50px" }}
             >
                 “Get going … walk if you have to, but finish the damned race.”
-                <br/> 
-                – Ron Hill
+                <br />– Ron Hill
             </h5>
             <img
                 className="row"
@@ -54,7 +58,15 @@ export default function Signup(props) {
             />
             <form className="container loginForm" onSubmit={handleSubmit}>
                 <div className="row">
-                    <h5 style={{ color: "#36bde9", borderBottom:'solid black 2px',paddingBottom:'20px' }}>Create Your Account</h5>
+                    <h5
+                        style={{
+                            color: "#36bde9",
+                            borderBottom: "solid black 2px",
+                            paddingBottom: "20px",
+                        }}
+                    >
+                        Create Your Account
+                    </h5>
                     {failedCreation ? (
                         <h6 style={{ color: "red" }}>
                             Signup Error. Please try again.
@@ -62,7 +74,9 @@ export default function Signup(props) {
                     ) : null}
                 </div>
                 <div className="row">
-                    <p style={{color:'rgb(3,182,227)', fontWeight:'600'}}>Username</p>
+                    <p style={{ color: "rgb(3,182,227)", fontWeight: "600" }}>
+                        Username
+                    </p>
                     <input
                         type="text"
                         required
@@ -70,7 +84,9 @@ export default function Signup(props) {
                     />
                 </div>
                 <div className="row">
-                    <p style={{color:'rgb(3,182,227)', fontWeight:'600'}}>Password</p>
+                    <p style={{ color: "rgb(3,182,227)", fontWeight: "600" }}>
+                        Password
+                    </p>
                     <input
                         type="password"
                         required
@@ -80,7 +96,10 @@ export default function Signup(props) {
                 <div className="row">
                     <button
                         type="submit"
-                        style={{ backgroundColor: "rgb(68,240,226)", color: "black" }}
+                        style={{
+                            backgroundColor: "rgb(68,240,226)",
+                            color: "black",
+                        }}
                     >
                         Sign Up
                     </button>

@@ -6,10 +6,15 @@ import "./Login.css";
 
 const API_PORT = process.env.REACT_APP_DEV_API_PORT
     ? process.env.REACT_APP_DEV_API_PORT
-    : "8080"; //! this fixes the problem if you have the variable defined in env, but if you don't the problem that existed going into this pull request will be untouched as some api requests are going to port 3000 and others to 8080. It makes a bunch of sense to choose either 3000 or 8080 for the hardcoded value, but I didn't want to make changes that surprise anyone. Just couldn't work on this feature with this issue on my end, so thats why I asked about inserting this ternary.
+    : "3000";
+
+const API_URL =
+    process.env.NODE_ENV === "production"
+        ? "https://on-the-run-project-3.herokuapp.com"
+        : `http://localhost:${API_PORT}`;
 
 async function loginUser(credentials) {
-    return fetch(`http://localhost:${API_PORT}/auth/login`, {
+    return fetch(`${API_URL}/auth/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -65,14 +70,18 @@ export default function Login({
                     <h3 style={{ color: "black" }}>Login</h3>
                 </div> */}
                 <div className="row">
-                    <p style={{color:'rgb(3,182,227)', fontWeight:'600'}}>Username</p>
+                    <p style={{ color: "rgb(3,182,227)", fontWeight: "600" }}>
+                        Username
+                    </p>
                     <input
                         type="text"
                         onChange={(e) => setUserName(e.target.value)}
                     />
                 </div>
                 <div className="row">
-                    <p style={{color:'rgb(3,182,227)', fontWeight:'600'}}>Password</p>
+                    <p style={{ color: "rgb(3,182,227)", fontWeight: "600" }}>
+                        Password
+                    </p>
                     <input
                         type="password"
                         onChange={(e) => setPassword(e.target.value)}
