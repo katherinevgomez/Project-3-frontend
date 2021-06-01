@@ -1,10 +1,12 @@
-import { useReducer } from "react";
 import { Link } from "react-router-dom";
 
 function Home(props) {
     return (
         <div className="">
-            <div className="row" style={{textAlign:'center', marginTop:'50px'}}>
+            <div
+                className="row"
+                style={{ textAlign: "center", marginTop: "50px" }}
+            >
                 <h1>Welcome, {props.username ? props.username : ""}</h1>
             </div>
             <div className="row iconsRow">
@@ -25,9 +27,7 @@ function Home(props) {
                 >
                     <p>Walk</p>
                 </Link>
-                <p className="twelve columns instruction">
-                    Choose An Activity
-                </p>
+                <p className="twelve columns instruction">Choose An Activity</p>
                 <div className="twelve columns descContainer">
                     <p className="description">
                         Welcome to On The Run! A collaborative effort between
